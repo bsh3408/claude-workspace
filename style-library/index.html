@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style Library · 레이아웃 템플릿 모음</title>
+  <link rel="stylesheet" href="css/library.css">
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">🎨 Style Library</span>
+    <nav>
+      <a href="#templates" class="active">템플릿</a>
+      <a href="#start">시작하기</a>
+    </nav>
+    <button class="btn btn-secondary btn-sm" id="theme-btn">🌙 다크</button>
+  </header>
+
+  <main class="container" style="padding-block: var(--sp-7);">
+    <section class="text-center" style="margin-bottom: var(--sp-7);">
+      <p class="eyebrow">복사해서 바로 시작</p>
+      <h1>레이아웃 템플릿 모음</h1>
+      <p class="lead text-soft" style="max-width:640px;margin:var(--sp-4) auto 0;">
+        앱을 만들 때마다 마음에 드는 템플릿을 골라 복사하세요.
+        모든 페이지가 하나의 <code>library.css</code>를 공유해서 색·글꼴만 바꾸면 톤이 통일됩니다.
+      </p>
+    </section>
+
+    <section id="templates">
+      <div class="grid grid-3">
+
+        <a href="templates/dashboard.html" class="card card-hover card-pad-0">
+          <div class="thumb" style="background:linear-gradient(135deg,#4f6ef7,#3b55d9);"><span>📊</span></div>
+          <div style="padding:var(--sp-5);">
+            <div class="cluster" style="margin-bottom:var(--sp-2);"><span class="card-title">대시보드</span><span class="badge">앱 화면</span></div>
+            <p class="card-body">사이드바 + 상단바 + 통계 위젯 + 표. 관리자·앱 내부 화면에.</p>
+          </div>
+        </a>
+
+        <a href="templates/landing.html" class="card card-hover card-pad-0">
+          <div class="thumb" style="background:linear-gradient(135deg,#f7663f,#e0532c);"><span>🚀</span></div>
+          <div style="padding:var(--sp-5);">
+            <div class="cluster" style="margin-bottom:var(--sp-2);"><span class="card-title">랜딩 페이지</span><span class="badge badge-warning">소개</span></div>
+            <p class="card-body">히어로 + 특징 + CTA + 푸터. 앱/서비스 첫인상 소개용.</p>
+          </div>
+        </a>
+
+        <a href="templates/form.html" class="card card-hover card-pad-0">
+          <div class="thumb" style="background:linear-gradient(135deg,#22a06b,#1c8a5b);"><span>📝</span></div>
+          <div style="padding:var(--sp-5);">
+            <div class="cluster" style="margin-bottom:var(--sp-2);"><span class="card-title">폼 / 입력</span><span class="badge badge-success">입력</span></div>
+            <p class="card-body">로그인·설문·신청 폼과 모달. 데이터 입력 중심 화면.</p>
+          </div>
+        </a>
+
+        <a href="templates/quiz.html" class="card card-hover card-pad-0">
+          <div class="thumb" style="background:linear-gradient(135deg,#8b5cf6,#6d3fd4);"><span>❓</span></div>
+          <div style="padding:var(--sp-5);">
+            <div class="cluster" style="margin-bottom:var(--sp-2);"><span class="card-title">퀴즈</span><span class="badge" style="background:rgba(139,92,246,.14);color:#7c3aed;">교육</span></div>
+            <p class="card-body">문제 카드 + 보기 버튼 + 진행바 + 결과. 학습 활동·수업용.</p>
+          </div>
+        </a>
+
+        <a href="templates/worksheet.html" class="card card-hover card-pad-0">
+          <div class="thumb" style="background:linear-gradient(135deg,#0ea5e9,#0284c7);"><span>🖨️</span></div>
+          <div style="padding:var(--sp-5);">
+            <div class="cluster" style="margin-bottom:var(--sp-2);"><span class="card-title">학습지 / 문서</span><span class="badge" style="background:rgba(14,165,233,.14);color:#0284c7;">교육·사무</span></div>
+            <p class="card-body">머리글 + 표 + 서명란. A4 인쇄에 최적화된 문서/학습지 양식.</p>
+          </div>
+        </a>
+
+        <a href="templates/card-game.html" class="card card-hover card-pad-0">
+          <div class="thumb" style="background:linear-gradient(135deg,#1a1a2e,#16213e);"><span>🎮</span></div>
+          <div style="padding:var(--sp-5);">
+            <div class="cluster" style="margin-bottom:var(--sp-2);"><span class="card-title">게임 / 카드 UI</span><span class="badge badge-gray">게임</span></div>
+            <p class="card-body">스탯 바 + 카드 + 좌우 선택 버튼. 카드 선택형 게임 화면.</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <section id="start" class="card" style="margin-top:var(--sp-7);">
+      <h3>시작하기</h3>
+      <ol class="stack-sm text-soft" style="margin-top:var(--sp-3);">
+        <li>원하는 템플릿의 HTML 파일을 복사합니다.</li>
+        <li><code>&lt;link rel="stylesheet" href="css/library.css"&gt;</code> 경로만 맞춰줍니다.</li>
+        <li>색을 바꾸려면 <code>:root { --brand: #색상; }</code> 한 줄만 덮어쓰면 전체가 따라옵니다.</li>
+        <li>다크모드는 <code>&lt;html data-theme="dark"&gt;</code> 로 전환됩니다.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="container text-center text-soft" style="padding-block:var(--sp-6);font-size:var(--fs-sm);">
+    style-library · claude-workspace
+  </footer>
+
+  <style>
+    .thumb { aspect-ratio: 16/9; display:grid; place-items:center; }
+    .thumb span { font-size: 3rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,.25)); }
+    .card.card-pad-0 { color: inherit; }
+    .card.card-pad-0:hover { color: inherit; }
+  </style>
+  <script>
+    const btn = document.getElementById('theme-btn');
+    btn.addEventListener('click', () => {
+      const html = document.documentElement;
+      const dark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', dark ? 'light' : 'dark');
+      btn.textContent = dark ? '🌙 다크' : '☀️ 라이트';
+    });
+  </script>
+</body>
+</html>

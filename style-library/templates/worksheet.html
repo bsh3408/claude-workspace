@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>학습지 / 문서 템플릿 (교육·사무)</title>
+  <link rel="stylesheet" href="../css/library.css">
+  <style>
+    /* A4 문서 느낌 */
+    body { background: var(--surface-2); }
+    .toolbar { position: sticky; top:0; z-index:10; background:var(--surface);
+      border-bottom:1px solid var(--border); padding:var(--sp-3) var(--sp-5); }
+    .sheet {
+      background:#fff; color:#1a1a1a; width:210mm; max-width:100%;
+      min-height:297mm; margin:var(--sp-6) auto; padding:22mm 20mm;
+      box-shadow:var(--shadow-lg); border-radius:2px;
+    }
+    .sheet h1,.sheet h2,.sheet h3 { color:#1a1a1a; }
+    .doc-head { display:flex; justify-content:space-between; align-items:flex-end;
+      border-bottom:3px solid #1a1a1a; padding-bottom:var(--sp-3); margin-bottom:var(--sp-5); }
+    .meta-table { width:100%; border-collapse:collapse; margin-bottom:var(--sp-5); }
+    .meta-table td { border:1px solid #999; padding:0.5rem 0.7rem; font-size:var(--fs-sm); }
+    .meta-table .lbl { background:#f0f0f0; font-weight:700; width:90px; text-align:center; }
+    .q-block { margin-bottom:var(--sp-5); }
+    .q-title { font-weight:700; margin-bottom:var(--sp-2); }
+    .answer-line { border-bottom:1px solid #bbb; height:1.9rem; margin-top:0.4rem; }
+    .box { border:1px solid #999; border-radius:6px; padding:var(--sp-4); min-height:80px; }
+    .sign-row { display:flex; gap:var(--sp-6); justify-content:flex-end; margin-top:var(--sp-7); }
+    .sign-row div { text-align:center; font-size:var(--fs-sm); }
+    .sign-line { border-bottom:1px solid #333; width:120px; height:1.6rem; margin-bottom:0.3rem; }
+    @media print { body{background:#fff;} .toolbar{display:none;} .sheet{box-shadow:none;margin:0;width:auto;} }
+  </style>
+</head>
+<body>
+  <div class="toolbar no-print row-between">
+    <strong>🖨️ 학습지 / 문서 양식</strong>
+    <div class="cluster">
+      <button class="btn btn-secondary btn-sm" id="theme-btn">🌙</button>
+      <button class="btn btn-sm" onclick="window.print()">인쇄 / PDF 저장</button>
+    </div>
+  </div>
+
+  <div class="sheet">
+    <!-- 머리글 -->
+    <div class="doc-head">
+      <div>
+        <p style="font-size:var(--fs-sm);color:#666;">통합과학 · 2단원</p>
+        <h1 style="font-size:1.8rem;">시스템과 상호작용 학습지</h1>
+      </div>
+      <div style="text-align:right;font-size:var(--fs-sm);color:#666;">신장고등학교<br>2026학년도</div>
+    </div>
+
+    <!-- 인적사항 -->
+    <table class="meta-table">
+      <tr>
+        <td class="lbl">학년/반</td><td>&nbsp;</td>
+        <td class="lbl">번호</td><td>&nbsp;</td>
+        <td class="lbl">이름</td><td style="width:120px;">&nbsp;</td>
+      </tr>
+    </table>
+
+    <!-- 학습 목표 -->
+    <div class="box" style="min-height:auto;margin-bottom:var(--sp-5);background:#f8f8f8;">
+      <strong>📌 학습 목표</strong>
+      <ul style="margin-top:0.4rem;">
+        <li>생태계 구성 요소 사이의 상호작용을 설명할 수 있다.</li>
+        <li>물질 순환과 에너지 흐름의 차이를 구분할 수 있다.</li>
+      </ul>
+    </div>
+
+    <!-- 문항 -->
+    <div class="q-block">
+      <p class="q-title">1. 다음 빈칸에 알맞은 말을 쓰시오.</p>
+      <p>생태계에서 생산자는 태양의 빛에너지를 이용해 (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;) 을 합성한다.</p>
+    </div>
+
+    <div class="q-block">
+      <p class="q-title">2. 물질 순환과 에너지 흐름의 차이를 서술하시오.</p>
+      <div class="answer-line"></div>
+      <div class="answer-line"></div>
+      <div class="answer-line"></div>
+    </div>
+
+    <div class="q-block">
+      <p class="q-title">3. 아래 먹이 그물을 보고 개념도를 완성하시오.</p>
+      <div class="box"></div>
+    </div>
+
+    <!-- 확인란 -->
+    <div class="sign-row">
+      <div><div class="sign-line"></div>학생 확인</div>
+      <div><div class="sign-line"></div>학부모 확인</div>
+      <div><div class="sign-line"></div>교사 확인</div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('theme-btn').addEventListener('click', (e) => {
+      const html = document.documentElement;
+      const dark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', dark ? 'light' : 'dark');
+      e.target.textContent = dark ? '🌙' : '☀️';
+    });
+  </script>
+</body>
+</html>

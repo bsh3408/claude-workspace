@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>랜딩 페이지 템플릿</title>
+  <link rel="stylesheet" href="../css/library.css">
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">🚀 Product</span>
+    <nav>
+      <a href="#features">특징</a>
+      <a href="#pricing">가격</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <button class="btn btn-secondary btn-sm" id="theme-btn">🌙</button>
+    <button class="btn btn-sm">시작하기</button>
+  </header>
+
+  <!-- 히어로 -->
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">NEW · 2026</p>
+      <h1>아이디어를 앱으로<br>더 빠르게</h1>
+      <p class="lead">코드 한 줄 없이 원하는 화면을 만들고 바로 공유하세요.<br>이 템플릿을 복사해 나만의 랜딩 페이지로 바꿔보세요.</p>
+      <div class="cluster center mt-6">
+        <button class="btn btn-lg">무료로 시작하기</button>
+        <button class="btn btn-secondary btn-lg">데모 보기</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 특징 -->
+  <section id="features" class="container" style="padding-block: var(--sp-8);">
+    <div class="text-center mb-6">
+      <p class="eyebrow">FEATURES</p>
+      <h2>왜 이걸 쓸까요?</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="feature-icon">⚡</div>
+        <h4>빠른 시작</h4>
+        <p class="card-body mt-2">복사·붙여넣기 한 번이면 화면이 완성됩니다.</p>
+      </div>
+      <div class="card">
+        <div class="feature-icon">🎨</div>
+        <h4>일관된 디자인</h4>
+        <p class="card-body mt-2">변수 하나만 바꿔도 전체 톤이 통일됩니다.</p>
+      </div>
+      <div class="card">
+        <div class="feature-icon">📱</div>
+        <h4>반응형</h4>
+        <p class="card-body mt-2">폰·태블릿·데스크탑에서 자연스럽게 보입니다.</p>
+      </div>
+      <div class="card">
+        <div class="feature-icon">🌙</div>
+        <h4>다크모드</h4>
+        <p class="card-body mt-2"><code>data-theme</code> 한 줄로 밝고 어두운 테마 지원.</p>
+      </div>
+      <div class="card">
+        <div class="feature-icon">🧩</div>
+        <h4>부품 조립</h4>
+        <p class="card-body mt-2">버튼·카드·표 등 준비된 컴포넌트를 골라 씁니다.</p>
+      </div>
+      <div class="card">
+        <div class="feature-icon">🔓</div>
+        <h4>의존성 0</h4>
+        <p class="card-body mt-2">순수 HTML/CSS. 어떤 프로젝트에도 바로 붙습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 가격 -->
+  <section id="pricing" class="container" style="padding-block: var(--sp-7);">
+    <div class="text-center mb-6"><p class="eyebrow">PRICING</p><h2>간단한 요금제</h2></div>
+    <div class="grid grid-3">
+      <div class="card"><h4>Free</h4><p class="stat-value" style="font-size:var(--fs-2xl)">₩0</p><ul class="text-soft stack-sm mt-4"><li>기본 템플릿</li><li>커뮤니티 지원</li></ul><button class="btn btn-secondary btn-block mt-6">시작</button></div>
+      <div class="card" style="border-color:var(--brand);box-shadow:var(--shadow-lg);position:relative;">
+        <span class="badge" style="position:absolute;top:-10px;right:var(--sp-4);">인기</span>
+        <h4>Pro</h4><p class="stat-value" style="font-size:var(--fs-2xl)">₩9,900</p><ul class="text-soft stack-sm mt-4"><li>모든 템플릿</li><li>우선 지원</li><li>업데이트 무제한</li></ul><button class="btn btn-block mt-6">Pro 시작</button>
+      </div>
+      <div class="card"><h4>Team</h4><p class="stat-value" style="font-size:var(--fs-2xl)">₩29,900</p><ul class="text-soft stack-sm mt-4"><li>Pro 전체</li><li>팀 협업</li><li>전용 지원</li></ul><button class="btn btn-secondary btn-block mt-6">문의</button></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="container" style="padding-block: var(--sp-7);">
+    <div class="card text-center" style="background:linear-gradient(135deg,var(--brand),var(--brand-strong));color:#fff;border:none;padding:var(--sp-8) var(--sp-6);">
+      <h2 style="color:#fff;">지금 바로 만들어 보세요</h2>
+      <p style="opacity:.9;margin-top:var(--sp-3);">몇 분이면 첫 화면이 완성됩니다.</p>
+      <button class="btn btn-lg mt-6" style="background:#fff;color:var(--brand-strong);">무료로 시작하기</button>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid var(--border);">
+    <div class="container row-between text-soft" style="padding-block:var(--sp-6);font-size:var(--fs-sm);flex-wrap:wrap;">
+      <span>© 2026 Product</span>
+      <div class="cluster"><a href="#">이용약관</a><a href="#">개인정보</a><a href="#">문의</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('theme-btn').addEventListener('click', (e) => {
+      const html = document.documentElement;
+      const dark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', dark ? 'light' : 'dark');
+      e.target.textContent = dark ? '🌙' : '☀️';
+    });
+  </script>
+</body>
+</html>
