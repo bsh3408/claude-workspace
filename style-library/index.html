@@ -6,112 +6,63 @@
   <title>Style Catalog · 디자인 결 카탈로그</title>
   <style>
     :root{
-      --bg:#111318; --panel:#181b22; --line:#262b35; --text:#e9ecf2; --muted:#8b93a3; --hi:#e8c17a;
-      --sans:"Apple SD Gothic Neo","Malgun Gothic","Helvetica Neue",system-ui,sans-serif;
+      --bg:#0e0f13; --panel:#171922; --line:#262a36; --text:#eceef4; --muted:#8b93a3; --hi:#e8c17a;
+      --sans:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","Helvetica Neue",system-ui,sans-serif;
     }
     *{box-sizing:border-box;margin:0}
-    body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;
-      background-image:radial-gradient(circle at 50% -10%,rgba(232,193,122,.08),transparent 45%);min-height:100vh}
-    .wrap{max-width:1100px;margin-inline:auto;padding:56px 28px 80px}
-    header{margin-bottom:56px}
+    body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;
+      background-image:radial-gradient(circle at 50% -10%,rgba(232,193,122,.08),transparent 45%)}
+    .wrap{max-width:1200px;margin-inline:auto;padding:56px 28px 80px}
+    header{margin-bottom:44px}
     .kick{font-size:.8rem;letter-spacing:.28em;text-transform:uppercase;color:var(--hi);font-weight:700}
     h1{font-size:clamp(2.4rem,6vw,3.6rem);letter-spacing:-.02em;margin:14px 0 18px}
-    .intro{color:var(--muted);max-width:640px;font-size:1.1rem}
+    .intro{color:var(--muted);max-width:660px;font-size:1.1rem}
     .howto{margin-top:24px;background:var(--panel);border:1px solid var(--line);border-radius:14px;
-      padding:18px 22px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:.98rem}
+      padding:18px 22px;font-size:.98rem}
     .howto b{color:var(--hi)}
-    .howto code{background:#0c0e12;border:1px solid var(--line);border-radius:6px;padding:3px 9px;color:var(--text)}
 
-    .styles{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
-    @media(max-width:780px){.styles{grid-template-columns:1fr}}
+    .styles{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    @media(max-width:940px){.styles{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.styles{grid-template-columns:1fr}}
     .style{display:block;text-decoration:none;color:inherit;background:var(--panel);
-      border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .2s,border-color .2s,box-shadow .2s}
-    .style:hover{transform:translateY(-4px);border-color:var(--hi);box-shadow:0 20px 40px rgba(0,0,0,.4)}
-    .preview{position:relative;height:280px;overflow:hidden;border-bottom:1px solid var(--line);background:#0c0e12}
-    .preview iframe{position:absolute;top:0;left:0;width:1250px;height:1094px;border:0;
-      transform:scale(.32);transform-origin:top left;pointer-events:none}
+      border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .2s,border-color .2s,box-shadow .2s}
+    .style:hover{transform:translateY(-4px);border-color:var(--hi);box-shadow:0 18px 40px rgba(0,0,0,.45)}
+    .preview{position:relative;height:210px;overflow:hidden;border-bottom:1px solid var(--line);background:#0c0e12}
+    .preview iframe{position:absolute;top:0;left:0;width:1250px;height:1050px;border:0;
+      transform:scale(.285);transform-origin:top left;pointer-events:none}
     .preview .veil{position:absolute;inset:0;z-index:2}
-    .no{position:absolute;top:14px;left:16px;z-index:3;font-size:2.6rem;font-weight:800;letter-spacing:-.03em;
+    .no{position:absolute;top:10px;left:12px;z-index:3;font-size:2rem;font-weight:800;letter-spacing:-.03em;
       color:#fff;mix-blend-mode:difference;line-height:1}
-    .body{padding:22px 24px}
-    .body h2{font-size:1.35rem;margin-bottom:6px}
-    .body p{color:var(--muted);font-size:.96rem}
-    .chips{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
-    .chip{font-size:.74rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
-    .go{margin-top:16px;color:var(--hi);font-weight:700;font-size:.9rem}
+    .body{padding:18px 20px}
+    .body h2{font-size:1.15rem;margin-bottom:4px}
+    .body p{color:var(--muted);font-size:.9rem}
+    .chips{margin-top:12px;display:flex;gap:6px;flex-wrap:wrap}
+    .chip{font-size:.72rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 9px}
 
-    .legacy{margin-top:64px;border-top:1px solid var(--line);padding-top:32px}
-    .legacy h3{font-size:1.1rem;margin-bottom:6px}
-    .legacy p{color:var(--muted);font-size:.95rem;margin-bottom:16px}
-    .legacy .links{display:flex;gap:10px;flex-wrap:wrap}
-    .legacy a{font-size:.9rem;color:var(--text);background:var(--panel);border:1px solid var(--line);
-      border-radius:999px;padding:8px 16px;text-decoration:none}
+    .legacy{margin-top:56px;border-top:1px solid var(--line);padding-top:28px}
+    .legacy h3{font-size:1.05rem;margin-bottom:6px}
+    .legacy p{color:var(--muted);font-size:.9rem;margin-bottom:14px}
+    .legacy .links{display:flex;gap:8px;flex-wrap:wrap}
+    .legacy a{font-size:.85rem;color:var(--text);background:var(--panel);border:1px solid var(--line);
+      border-radius:999px;padding:7px 14px;text-decoration:none}
     .legacy a:hover{border-color:var(--hi);color:var(--hi)}
-    footer{margin-top:56px;color:var(--muted);font-size:.85rem;text-align:center}
+    footer{margin-top:48px;color:var(--muted);font-size:.85rem;text-align:center}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <p class="kick">Style Catalog</p>
+      <p class="kick">Style Catalog · 10 Directions</p>
       <h1>디자인 결 카탈로그</h1>
-      <p class="intro">서로 완전히 다른 4가지 디자인 언어입니다. 마음에 드는 걸 골라 실제 화면을 확인하세요.</p>
-      <div class="howto">
-        💡 <span>앞으로 이렇게 요청하세요 — <b>"3번 느낌으로 퀴즈 앱 만들어줘"</b>,&nbsp; <b>"1번 스타일로 대시보드"</b></span>
-      </div>
+      <p class="intro">실제 앱·웹서비스의 디자인 언어를 참고한 10가지 스타일. 마음에 드는 걸 골라 실제 화면을 확인하세요.</p>
+      <div class="howto">💡 앞으로 이렇게 요청하세요 — <b>"7번 느낌으로 앱 만들어줘"</b>,&nbsp; <b>"10번 스타일로 퀴즈"</b>,&nbsp; <b>"8번 톤 대시보드"</b></div>
     </header>
 
-    <div class="styles">
-
-      <a class="style" href="styles/01-brutalism/showcase.html">
-        <div class="preview"><span class="no">01</span><span class="veil"></span>
-          <iframe src="styles/01-brutalism/showcase.html" loading="lazy" scrolling="no" tabindex="-1"></iframe></div>
-        <div class="body">
-          <h2>뉴 브루탈리즘</h2>
-          <p>두꺼운 검은 테두리, 번짐 없는 하드 그림자, 쨍한 원색. 각지고 강한 개성.</p>
-          <div class="chips"><span class="chip">강렬함</span><span class="chip">장난기</span><span class="chip">캠페인·이벤트</span></div>
-          <div class="go">미리보기 열기 →</div>
-        </div>
-      </a>
-
-      <a class="style" href="styles/02-editorial/showcase.html">
-        <div class="preview"><span class="no">02</span><span class="veil"></span>
-          <iframe src="styles/02-editorial/showcase.html" loading="lazy" scrolling="no" tabindex="-1"></iframe></div>
-        <div class="body">
-          <h2>에디토리얼 / 스위스</h2>
-          <p>세리프 대형 헤드라인, 헤어라인 구분선, 흑백 + 포인트 한 색. 잡지 같은 절제미.</p>
-          <div class="chips"><span class="chip">고급스러움</span><span class="chip">절제</span><span class="chip">소개·아카이브</span></div>
-          <div class="go">미리보기 열기 →</div>
-        </div>
-      </a>
-
-      <a class="style" href="styles/03-terminal/showcase.html">
-        <div class="preview"><span class="no">03</span><span class="veil"></span>
-          <iframe src="styles/03-terminal/showcase.html" loading="lazy" scrolling="no" tabindex="-1"></iframe></div>
-        <div class="body">
-          <h2>레트로 터미널 / 사이버</h2>
-          <p>어두운 배경, 모노스페이스, 네온 컬러, 스캔라인. 게임·개발 무드에 강함.</p>
-          <div class="chips"><span class="chip">테크</span><span class="chip">게임</span><span class="chip">해커 무드</span></div>
-          <div class="go">미리보기 열기 →</div>
-        </div>
-      </a>
-
-      <a class="style" href="styles/04-organic/showcase.html">
-        <div class="preview"><span class="no">04</span><span class="veil"></span>
-          <iframe src="styles/04-organic/showcase.html" loading="lazy" scrolling="no" tabindex="-1"></iframe></div>
-        <div class="body">
-          <h2>따뜻한 오가닉</h2>
-          <p>흙빛·크림·세이지 자연색, 부드러운 세리프, 둥근 형태. 아늑하고 손맛 나는 결.</p>
-          <div class="chips"><span class="chip">따뜻함</span><span class="chip">아늑함</span><span class="chip">교육·도서</span></div>
-          <div class="go">미리보기 열기 →</div>
-        </div>
-      </a>
-
-    </div>
+    <div class="styles" id="styles"></div>
 
     <div class="legacy">
-      <h3>기본 레이아웃 템플릿 (스타일 무관)</h3>
-      <p>대시보드·랜딩·폼 등 구조만 필요할 때 쓰는 중립 템플릿입니다. 위 스타일과 조합할 수 있어요.</p>
+      <h3>기본 레이아웃 템플릿 (스타일 무관 · 구조 위주)</h3>
+      <p>대시보드·랜딩·폼 등 뼈대만 필요할 때. 위 스타일과 조합할 수 있어요.</p>
       <div class="links">
         <a href="templates/dashboard.html">대시보드</a>
         <a href="templates/landing.html">랜딩</a>
@@ -124,5 +75,31 @@
 
     <footer>style-library · claude-workspace</footer>
   </div>
+
+  <script>
+    const STYLES = [
+      { no:"01", dir:"01-brutalism", name:"뉴 브루탈리즘", desc:"두꺼운 테두리·하드 그림자·쨍한 원색. 각지고 강한 개성.", chips:["강렬함","장난기","캠페인"] },
+      { no:"02", dir:"02-editorial", name:"에디토리얼 / 스위스", desc:"세리프 헤드라인·헤어라인·흑백+포인트 한 색. 잡지 절제미.", chips:["고급","절제","소개"] },
+      { no:"03", dir:"03-terminal", name:"레트로 터미널", desc:"모노스페이스·네온·스캔라인 CRT 감성.", chips:["테크","게임","해커"] },
+      { no:"04", dir:"04-organic", name:"따뜻한 오가닉", desc:"흙빛·크림·세이지 자연색·부드러운 세리프.", chips:["따뜻함","아늑함","교육"] },
+      { no:"05", dir:"05-saas", name:"모던 SaaS", desc:"다크·보라 글로우·글래스 내비. Linear/Vercel 계열.", chips:["세련","스타트업","랜딩"] },
+      { no:"06", dir:"06-apple", name:"미니멀 프로덕트", desc:"순백·초대형 타이포·넉넉한 여백. Apple 계열.", chips:["미니멀","제품","프리미엄"] },
+      { no:"07", dir:"07-stream", name:"스트리밍 다크", desc:"딥 다크·비비드 그린·앨범 그리드+재생바. 뮤직 앱.", chips:["미디어","앱 화면","다크"] },
+      { no:"08", dir:"08-toss", name:"핀테크 / 토스", desc:"순백·블루 한 색·큼직한 버튼·폰 목업. 한국 금융 앱.", chips:["금융","모바일","깔끔"] },
+      { no:"09", dir:"09-social", name:"소셜 피드", desc:"폰 프레임·스토리·피드·하단 탭. Instagram 계열.", chips:["소셜","모바일","피드"] },
+      { no:"10", dir:"10-playful", name:"게이미피케이션", desc:"쨍한 그린·눌리는 3D 버튼·진행 경로. Duolingo 계열.", chips:["학습","게임","통통"] },
+    ];
+    const el = document.getElementById("styles");
+    el.innerHTML = STYLES.map(s => `
+      <a class="style" href="styles/${s.dir}/showcase.html">
+        <div class="preview"><span class="no">${s.no}</span><span class="veil"></span>
+          <iframe src="styles/${s.dir}/showcase.html" loading="lazy" scrolling="no" tabindex="-1"></iframe></div>
+        <div class="body">
+          <h2>${s.name}</h2>
+          <p>${s.desc}</p>
+          <div class="chips">${s.chips.map(c=>`<span class="chip">${c}</span>`).join("")}</div>
+        </div>
+      </a>`).join("");
+  </script>
 </body>
 </html>

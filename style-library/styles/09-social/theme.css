@@ -1,0 +1,55 @@
+/* ============================================================
+   STYLE 09 · SOCIAL FEED  (소셜 피드 — Instagram 계열 · 모바일)
+   폰 프레임 · 스토리 링 · 피드 카드 · 좋아요/댓글 · 하단 탭바
+   ============================================================ */
+:root{
+  --bg:#fafafa; --card:#ffffff; --text:#262626; --muted:#8e8e8e; --line:#dbdbdb;
+  --blue:#0095f6; --grad:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+  --sans:"Pretendard","Apple SD Gothic Neo","Helvetica Neue","Malgun Gothic",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:var(--sans);background:#efefef;color:var(--text);line-height:1.4;min-height:100vh;
+  display:flex;justify-content:center;padding:24px 16px;
+  background-image:radial-gradient(circle at 50% 0,#fff,transparent 60%)}
+
+.phone{width:390px;max-width:100%;background:var(--card);border-radius:40px;overflow:hidden;
+  box-shadow:0 24px 60px rgba(0,0,0,.18);border:1px solid var(--line);display:flex;flex-direction:column;height:844px;max-height:92vh}
+
+/* 상단 바 */
+.appbar{display:flex;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line);flex:none}
+.logo{font-family:"Segoe Script","Snell Roundhand",cursive;font-size:1.5rem;font-weight:700}
+.appbar .sp{margin-left:auto;display:flex;gap:18px;font-size:1.2rem}
+
+/* 스크롤 영역 */
+.feed{overflow-y:auto;flex:1}
+
+/* 스토리 */
+.stories{display:flex;gap:14px;padding:14px 16px;overflow-x:auto;border-bottom:1px solid var(--line)}
+.story{display:flex;flex-direction:column;align-items:center;gap:5px;flex:none;font-size:.72rem;color:var(--text);width:64px}
+.ring{width:60px;height:60px;border-radius:50%;padding:3px;background:var(--grad)}
+.ring>div{width:100%;height:100%;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;font-size:1.5rem;background:#fff}
+.story span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
+
+/* 포스트 */
+.post{border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:6px}
+.phead{display:flex;align-items:center;gap:10px;padding:12px 14px}
+.phead .av{width:34px;height:34px;border-radius:50%;padding:2px;background:var(--grad)}
+.phead .av>div{width:100%;height:100%;border-radius:50%;border:2px solid #fff;background:#eee;display:grid;place-items:center;font-size:.9rem}
+.phead .u{font-weight:700;font-size:.9rem}
+.phead .more{margin-left:auto;color:var(--muted)}
+.pimg{aspect-ratio:4/5;display:grid;place-items:center;font-size:4rem;color:#fff}
+.pacts{display:flex;gap:16px;padding:12px 14px 6px;font-size:1.5rem}
+.pacts .save{margin-left:auto}
+.likes{padding:0 14px;font-weight:700;font-size:.9rem}
+.cap{padding:4px 14px;font-size:.9rem}.cap b{font-weight:700}
+.cmts{padding:4px 14px;color:var(--muted);font-size:.85rem}
+.time{padding:2px 14px 0;color:var(--muted);font-size:.7rem;text-transform:uppercase}
+
+/* 하단 탭 */
+.tabbar{display:flex;justify-content:space-around;padding:12px 0;border-top:1px solid var(--line);flex:none;font-size:1.4rem}
+.tabbar .t.on{transform:scale(1.05)}
+.tabbar .me{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#f857a6,#ff5858);border:1px solid var(--text)}
+
+/* 버튼 (일부 화면용) */
+.btn{font-family:inherit;font-weight:700;font-size:.9rem;padding:8px 16px;border-radius:8px;border:none;cursor:pointer;background:var(--blue);color:#fff}
+.backlink{position:fixed;top:16px;left:16px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:700;color:var(--text);box-shadow:0 4px 12px rgba(0,0,0,.1)}

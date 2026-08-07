@@ -1,0 +1,78 @@
+/* ============================================================
+   STYLE 08 · FINTECH / TOSS  (핀테크 — 한국 모바일 금융 계열)
+   순백 · 토스 블루 한 색 · 큼직한 라운드 버튼 · 큰 숫자 · 친근하고 깔끔
+   ============================================================ */
+:root{
+  --bg:#f2f4f6; --card:#ffffff; --text:#191f28; --muted:#8b95a1; --sub:#4e5968;
+  --blue:#3182f6; --blue-bg:#e8f3ff; --line:#eceef0; --red:#f04452;
+  --sans:"Toss Product Sans","Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --shadow:0 2px 8px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.06);
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.5;min-height:100vh;-webkit-font-smoothing:antialiased}
+h1,h2,h3{letter-spacing:-.03em;font-weight:700;line-height:1.25}
+h1{font-size:clamp(1.7rem,5vw,2.4rem)}
+h2{font-size:1.4rem}
+a{color:var(--blue);text-decoration:none}
+
+.stage{max-width:1000px;margin-inline:auto;padding:32px 24px 64px;
+  display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:center}
+@media(max-width:860px){.stage{grid-template-columns:1fr;justify-items:center;text-align:center}}
+
+/* 좌측 카피 */
+.copy .badge{display:inline-block;background:var(--blue-bg);color:var(--blue);font-weight:700;
+  padding:6px 14px;border-radius:999px;font-size:.85rem;margin-bottom:18px}
+.copy .lead{color:var(--sub);font-size:1.15rem;margin-top:16px;max-width:420px}
+@media(max-width:860px){.copy .lead{margin-inline:auto}}
+
+/* 버튼 (큼직, 둥근) */
+.btn{font-family:inherit;font-weight:700;font-size:1.05rem;padding:15px 24px;border-radius:14px;border:none;cursor:pointer;
+  background:var(--blue);color:#fff;display:inline-block;text-decoration:none;transition:background .15s,transform .1s}
+.btn:hover{background:#1b6ef3;color:#fff}
+.btn:active{transform:scale(.98)}
+.btn.block{display:block;width:100%;text-align:center}
+.btn.soft{background:var(--blue-bg);color:var(--blue)}
+.btn.soft:hover{background:#d8ebff}
+.btn.gray{background:#f2f4f6;color:var(--text)}
+
+/* 폰 목업 */
+.phone{width:340px;max-width:88vw;background:#fff;border-radius:36px;box-shadow:0 20px 50px rgba(0,20,60,.16);
+  padding:14px;border:1px solid var(--line)}
+.phone .screen{background:var(--bg);border-radius:26px;overflow:hidden}
+.phone .status{display:flex;justify-content:space-between;padding:12px 20px 6px;font-size:.8rem;color:var(--muted);font-weight:600}
+.phone .body{padding:8px 16px 18px}
+
+/* 계좌 카드 */
+.acct{background:var(--card);border-radius:20px;padding:20px;box-shadow:var(--shadow);margin-bottom:14px}
+.acct .name{color:var(--muted);font-size:.9rem;font-weight:600}
+.acct .bal{font-size:2rem;font-weight:800;letter-spacing:-.04em;margin:4px 0 14px}
+.acct .row{display:flex;gap:8px}
+.acct .row .btn{flex:1;font-size:.92rem;padding:11px}
+
+/* 퀵 액션 */
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;background:var(--card);border-radius:20px;padding:18px 12px;box-shadow:var(--shadow);margin-bottom:14px}
+.quick .q{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:.78rem;color:var(--sub);font-weight:600}
+.quick .q .ic{width:46px;height:46px;border-radius:50%;background:var(--blue-bg);display:grid;place-items:center;font-size:1.3rem}
+
+/* 거래 리스트 */
+.list{background:var(--card);border-radius:20px;padding:8px 16px;box-shadow:var(--shadow)}
+.tx{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.tx:last-child{border-bottom:none}
+.tx .ic{width:40px;height:40px;border-radius:12px;background:#f2f4f6;display:grid;place-items:center;font-size:1.1rem;flex:none}
+.tx .who{font-weight:700;font-size:.95rem}.tx .when{color:var(--muted);font-size:.8rem}
+.tx .amt{margin-left:auto;font-weight:800;letter-spacing:-.02em}
+.tx .amt.plus{color:var(--blue)}
+
+/* 하단 탭 */
+.tabbar{display:flex;justify-content:space-around;padding:12px 0 6px;background:#fff;border-top:1px solid var(--line)}
+.tabbar .tab{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:.68rem;color:var(--muted);font-weight:600}
+.tabbar .tab.on{color:var(--blue)}
+.tabbar .tab .ic{font-size:1.2rem}
+
+/* 하단 특징 스트립 */
+.features{max-width:1000px;margin:0 auto;padding:0 24px 64px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:760px){.features{grid-template-columns:1fr}}
+.feat{background:#fff;border-radius:20px;padding:26px;box-shadow:var(--shadow)}
+.feat .big{font-size:2rem;margin-bottom:10px}
+.feat p{color:var(--sub);margin-top:6px}
+.foot{text-align:center;color:var(--muted);font-size:.85rem;padding-bottom:32px}
