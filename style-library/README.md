@@ -29,10 +29,20 @@
 | **NES.css** | 8비트 픽셀 아트 UI | 게임·레트로 |
 | **98.css** | Windows 98 재현, 창·타이틀바 | 향수·개성 컨셉 |
 | **Simple.css** | 클래스 0개, 시맨틱 HTML만 | 블로그·읽을거리 |
+| **Tailwind + DaisyUI** | 요즘 가장 인기. 유틸리티+컴포넌트, 테마 30종 (실제 빌드 내장) | 모던 웹앱 전반 |
+| **Beer CSS** | 구글 머티리얼 디자인 3 | 안드로이드풍·공공/교육 |
+| **Water.css** | 클래스 0개, 다크모드 자동 | 문서·경량 페이지 |
 
-> 예시 요청: **"Bootstrap으로 출결 관리 앱"**, **"NES.css로 게임 메뉴"**, **"Pico로 학급 홈페이지"**
+### 🎬 애니메이션 라이브러리 (`frameworks/animate`, `frameworks/aos`)
+
+| 라이브러리 | 설명 |
+|---|---|
+| **Animate.css** | 가장 유명한 CSS 애니메이션. `class="animate__animated animate__bounce"` 만 붙이면 끝. (눌러서 재생되는 데모 포함) |
+| **AOS** | 스크롤하면 요소가 부드럽게 등장(Animate On Scroll). `data-aos="fade-up"` 속성 하나로 적용. |
+
+> 예시 요청: **"DaisyUI로 출결 관리 앱"**, **"NES.css로 게임 메뉴"**, **"Beer CSS로 학교 알림 앱"**, **"랜딩 페이지에 AOS 스크롤 애니메이션 넣어줘"**
 >
-> 다른 라이브러리(예: Tailwind·DaisyUI·Bulma 테마·Water.css 등)도 요청하면 추가로 설치해 드립니다.
+> 다른 라이브러리도 요청하면 추가로 설치해 드립니다.
 
 ## 📱 핸드폰으로 보기
 

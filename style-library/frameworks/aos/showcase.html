@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AOS · Animate On Scroll</title>
+  <link rel="stylesheet" href="aos.css">
+  <style>
+    :root{--bg:#faf7f2;--ink:#221c14;--muted:#7a7266;--accent:#e0662f;--card:#fff;--line:#e9e1d5}
+    *{box-sizing:border-box;margin:0}
+    body{font-family:"Pretendard","Malgun Gothic",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+    .wrap{max-width:760px;margin:auto;padding:0 20px}
+    .hero{min-height:78vh;display:flex;flex-direction:column;justify-content:center;text-align:center}
+    .hero h1{font-size:clamp(2.2rem,7vw,3.4rem);letter-spacing:-.03em}
+    .hero p{color:var(--muted);font-size:1.15rem;margin-top:14px}
+    .scroll-hint{margin-top:30px;color:var(--accent);font-weight:700}
+    section{padding:60px 0}
+    h2{font-size:1.7rem;margin-bottom:8px}
+    .muted{color:var(--muted)}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;margin-top:16px;
+      box-shadow:0 8px 24px rgba(80,50,20,.06)}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media(max-width:560px){.row{grid-template-columns:1fr}}
+    .big{font-size:2rem}
+    a.back{position:fixed;top:14px;left:14px;background:#fff;border:1px solid var(--line);border-radius:999px;
+      padding:8px 15px;font-weight:700;color:var(--ink);text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.08);z-index:9}
+    .num{font-size:2.4rem;font-weight:800;color:var(--accent)}
+  </style>
+</head>
+<body>
+  <a class="back" href="../../index.html">← 카탈로그</a>
+  <div class="wrap">
+    <div class="hero">
+      <h1 data-aos="fade-up">스크롤하면<br>나타납니다</h1>
+      <p data-aos="fade-up" data-aos-delay="150">AOS(Animate On Scroll) — 요소가 화면에 들어올 때 부드럽게 등장. 아래로 내려보세요.</p>
+      <p class="scroll-hint" data-aos="fade-up" data-aos-delay="300">↓ 스크롤</p>
+    </div>
+
+    <section>
+      <h2 data-aos="fade-right">fade-right</h2>
+      <p class="muted" data-aos="fade-right" data-aos-delay="100">오른쪽으로 서서히 나타나는 문단입니다.</p>
+      <div class="card" data-aos="zoom-in">
+        <span class="big">🎓</span>
+        <h3>zoom-in 카드</h3>
+        <p class="muted">확대되며 등장하는 카드. <code>data-aos="zoom-in"</code></p>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-aos="flip-up">숫자가 미끄러져 들어옵니다</h2>
+      <div class="row">
+        <div class="card" data-aos="fade-up" data-aos-delay="0"><div class="num">312</div><p class="muted">학생</div>
+        <div class="card" data-aos="fade-up" data-aos-delay="150"><div class="num">96%</div><p class="muted">출석률</div>
+        <div class="card" data-aos="fade-up" data-aos-delay="300"><div class="num">1.2K</div><p class="muted">과제</div>
+        <div class="card" data-aos="fade-up" data-aos-delay="450"><div class="num">4.8</div><p class="muted">만족도</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="card" data-aos="fade-left"><h3>fade-left</h3><p class="muted">왼쪽에서 등장.</p></div>
+      <div class="card" data-aos="zoom-in-up"><h3>zoom-in-up</h3><p class="muted">확대되며 위로.</p></div>
+      <div class="card" data-aos="flip-left"><h3>flip-left</h3><p class="muted">뒤집히며 등장.</p></div>
+    </section>
+
+    <section style="text-align:center;padding-bottom:100px">
+      <h2 data-aos="fade-up">간단하죠?</h2>
+      <p class="muted" data-aos="fade-up" data-aos-delay="120"><code>data-aos="fade-up"</code> 속성 하나면 됩니다.</p>
+      <p class="muted" style="margin-top:30px;font-size:.85rem">AOS · 실제 라이브러리 — style-library / frameworks</p>
+    </section>
+  </div>
+
+  <script src="aos.js"></script>
+  <script>AOS.init({ duration: 700, once: false, offset: 80 });</script>
+</body>
+</html>

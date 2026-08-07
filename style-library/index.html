@@ -51,6 +51,9 @@
       border-radius:999px;padding:7px 14px;text-decoration:none}
     .legacy a:hover{border-color:var(--hi);color:var(--hi)}
     footer{margin-top:48px;color:var(--muted);font-size:.85rem;text-align:center}
+    .style.reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.7,.2,1)}
+    .style.reveal.in{opacity:1;transform:none}
+    @media (prefers-reduced-motion: reduce){.style.reveal{opacity:1;transform:none;transition:none}}
   </style>
 </head>
 <body>
@@ -70,6 +73,12 @@
       <p>제가 손으로 짠 CSS가 아니라, 프로덕션에서 널리 쓰이는 라이브러리를 그대로 설치해 각 라이브러리 고유의 룩으로 만든 화면입니다. (오프라인에서도 열립니다)</p>
     </div>
     <div class="styles" id="frameworks"></div>
+
+    <div class="fw-head">
+      <h2>애니메이션 라이브러리 <span class="tagline">움직임 추가</span></h2>
+      <p>화면에 생동감을 더하는 라이브러리. 클래스나 속성만 붙이면 등장·주목 효과가 적용됩니다.</p>
+    </div>
+    <div class="styles" id="anim"></div>
 
     <div class="legacy">
       <h3>기본 레이아웃 템플릿 (스타일 무관 · 구조 위주)</h3>
@@ -107,6 +116,13 @@
       { dir:"frameworks/nes", name:"NES.css", desc:"8비트 픽셀 아트 UI. 게임·레트로 컨셉에 최적.", chips:["8비트","게임","레트로"] },
       { dir:"frameworks/win98", name:"98.css", desc:"Windows 98 UI 재현. 향수·개성 만점의 창·타이틀바.", chips:["레트로","향수","개성"] },
       { dir:"frameworks/simple", name:"Simple.css", desc:"클래스 0개. 시맨틱 HTML만으로 아름다운 문서. 블로그·읽을거리용.", chips:["클래스리스","문서","초경량"] },
+      { dir:"frameworks/daisyui", name:"Tailwind + DaisyUI", desc:"요즘 가장 인기. 유틸리티+컴포넌트, 테마 30종. (실제 빌드 내장)", chips:["인기","테마","모던"] },
+      { dir:"frameworks/beer", name:"Beer CSS", desc:"구글 머티리얼 디자인 3. 부드러운 곡선과 동적 색상.", chips:["머티리얼","구글","MD3"] },
+      { dir:"frameworks/water", name:"Water.css", desc:"클래스 0개. 다크모드 자동. 초경량 클래스리스.", chips:["클래스리스","자동다크"] },
+    ];
+    const ANIM = [
+      { dir:"frameworks/animate", name:"Animate.css", desc:"가장 유명한 CSS 애니메이션. 클래스만 붙이면 끝. 눌러서 재생되는 데모.", chips:["애니메이션","인기","인터랙티브"] },
+      { dir:"frameworks/aos", name:"AOS (스크롤)", desc:"스크롤하면 요소가 부드럽게 등장. Animate On Scroll.", chips:["애니메이션","스크롤"] },
     ];
     const card = (s, iframe) => `
       <a class="style" href="${s.dir}/showcase.html">
@@ -122,6 +138,16 @@
       STYLES.map(s => card({...s, dir:`styles/${s.dir}`}, `styles/${s.dir}/showcase.html`)).join("");
     document.getElementById("frameworks").innerHTML =
       FRAMEWORKS.map(s => card(s, `${s.dir}/showcase.html`)).join("");
+    document.getElementById("anim").innerHTML =
+      ANIM.map(s => card(s, `${s.dir}/showcase.html`)).join("");
+
+    // 카드 등장 애니메이션 (스크롤 진입 시 페이드업, 모션 최소화 설정 존중)
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const io = new IntersectionObserver((es) => {
+        es.forEach((e, i) => { if (e.isIntersecting) { e.target.style.transitionDelay = (i % 3 * 60) + "ms"; e.target.classList.add("in"); io.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      document.querySelectorAll(".style").forEach(el => { el.classList.add("reveal"); io.observe(el); });
+    }
   </script>
 </body>
 </html>

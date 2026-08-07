@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animate.css · showcase</title>
+  <link rel="stylesheet" href="animate.min.css">
+  <style>
+    :root{--bg:#0f1220;--panel:#1a1f33;--line:#2b3350;--text:#eef1fa;--muted:#9aa4c2;--accent:#7c5cff;--accent2:#31d0aa}
+    *{box-sizing:border-box;margin:0}
+    body{font-family:"Pretendard","Malgun Gothic",system-ui,sans-serif;background:var(--bg);color:var(--text);
+      line-height:1.6;padding:28px 18px 60px;max-width:860px;margin:auto}
+    h1{font-size:1.9rem;letter-spacing:-.02em}
+    .muted{color:var(--muted)}
+    a.back{color:var(--accent2);font-weight:700;text-decoration:none}
+    .stage{margin:22px 0;background:var(--panel);border:1px solid var(--line);border-radius:18px;
+      min-height:220px;display:grid;place-items:center;overflow:hidden}
+    #target{width:130px;height:130px;border-radius:24px;background:linear-gradient(135deg,var(--accent),var(--accent2));
+      display:grid;place-items:center;font-size:3rem;box-shadow:0 12px 30px rgba(124,92,255,.35)}
+    .controls{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+    .controls button{font-family:inherit;font-weight:700;font-size:.85rem;padding:9px 14px;border-radius:10px;
+      border:1px solid var(--line);background:var(--panel);color:var(--text);cursor:pointer;transition:.15s}
+    .controls button:hover{border-color:var(--accent);transform:translateY(-1px)}
+    .controls .grp{font-size:.72rem;color:var(--muted);width:100%;margin-top:8px;text-transform:uppercase;letter-spacing:.08em}
+    h2{font-size:1.1rem;margin:28px 0 12px}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px}
+    .cell{background:var(--panel);border:1px solid var(--line);border-radius:14px;aspect-ratio:1;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-size:.78rem;color:var(--muted)}
+    .cell .box{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+    code{background:#0c0f1a;border:1px solid var(--line);border-radius:6px;padding:2px 7px;font-size:.85em}
+  </style>
+</head>
+<body>
+  <p><a class="back" href="../../index.html">← 카탈로그</a></p>
+  <h1>🎬 Animate.css</h1>
+  <p class="muted">가장 유명한 CSS 애니메이션 라이브러리. 요소에 <code>class="animate__animated animate__bounce"</code> 만 붙이면 끝. 버튼을 눌러 아래 상자에 적용해 보세요.</p>
+
+  <div class="stage"><div id="target">✨</div></div>
+
+  <div class="controls">
+    <span class="grp">주목 효과 (Attention)</span>
+    <button data-a="bounce">bounce</button>
+    <button data-a="flash">flash</button>
+    <button data-a="pulse">pulse</button>
+    <button data-a="shakeX">shakeX</button>
+    <button data-a="swing">swing</button>
+    <button data-a="tada">tada</button>
+    <button data-a="wobble">wobble</button>
+    <button data-a="jello">jello</button>
+    <button data-a="heartBeat">heartBeat</button>
+    <span class="grp">등장 효과 (Entrance)</span>
+    <button data-a="bounceIn">bounceIn</button>
+    <button data-a="fadeInUp">fadeInUp</button>
+    <button data-a="zoomIn">zoomIn</button>
+    <button data-a="flipInX">flipInX</button>
+    <button data-a="rotateIn">rotateIn</button>
+    <button data-a="backInDown">backInDown</button>
+    <span class="grp">퇴장 효과 (Exit)</span>
+    <button data-a="bounceOut">bounceOut</button>
+    <button data-a="fadeOutDown">fadeOutDown</button>
+    <button data-a="zoomOut">zoomOut</button>
+    <button data-a="hinge">hinge</button>
+  </div>
+
+  <h2>계속 반복되는 예시</h2>
+  <div class="gallery" id="gallery"></div>
+
+  <p class="muted" style="margin-top:28px;font-size:.85rem">Animate.css · 실제 라이브러리 — style-library / frameworks</p>
+
+  <script>
+    const target = document.getElementById('target');
+    function play(name){
+      target.className = '';               // reset
+      void target.offsetWidth;             // reflow → 재생 트리거
+      target.classList.add('animate__animated', 'animate__' + name);
+    }
+    document.querySelectorAll('.controls button').forEach(b =>
+      b.addEventListener('click', () => play(b.dataset.a)));
+    target.addEventListener('animationend', () => {
+      if (target.className.includes('Out') || target.className.includes('hinge'))
+        setTimeout(() => { target.className = ''; }, 400);   // 사라진 효과는 되돌리기
+    });
+
+    // 반복 갤러리
+    const loops = ['pulse','bounce','tada','swing','flash','heartBeat','shakeY','rubberBand'];
+    document.getElementById('gallery').innerHTML = loops.map(n =>
+      `<div class="cell"><div class="box animate__animated animate__${n} animate__infinite" style="animation-duration:1.6s"></div>${n}</div>`
+    ).join('');
+  </script>
+</body>
+</html>
