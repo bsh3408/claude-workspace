@@ -39,6 +39,10 @@
     .chips{margin-top:12px;display:flex;gap:6px;flex-wrap:wrap}
     .chip{font-size:.72rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 9px}
 
+    .fw-head{margin:64px 0 22px}
+    .fw-head h2{font-size:1.6rem;letter-spacing:-.01em}
+    .fw-head .tagline{font-size:.8rem;color:var(--hi);font-weight:600;margin-left:8px}
+    .fw-head p{color:var(--muted);font-size:.95rem;max-width:680px;margin-top:8px}
     .legacy{margin-top:56px;border-top:1px solid var(--line);padding-top:28px}
     .legacy h3{font-size:1.05rem;margin-bottom:6px}
     .legacy p{color:var(--muted);font-size:.9rem;margin-bottom:14px}
@@ -59,6 +63,12 @@
     </header>
 
     <div class="styles" id="styles"></div>
+
+    <div class="fw-head">
+      <h2>설치한 실제 디자인 라이브러리 <span class="tagline">npm으로 설치 · 프로젝트에 내장</span></h2>
+      <p>제가 손으로 짠 CSS가 아니라, 프로덕션에서 널리 쓰이는 라이브러리를 그대로 설치해 각 라이브러리 고유의 룩으로 만든 화면입니다. (오프라인에서도 열립니다)</p>
+    </div>
+    <div class="styles" id="frameworks"></div>
 
     <div class="legacy">
       <h3>기본 레이아웃 템플릿 (스타일 무관 · 구조 위주)</h3>
@@ -89,17 +99,28 @@
       { no:"09", dir:"09-social", name:"소셜 피드", desc:"폰 프레임·스토리·피드·하단 탭. Instagram 계열.", chips:["소셜","모바일","피드"] },
       { no:"10", dir:"10-playful", name:"게이미피케이션", desc:"쨍한 그린·눌리는 3D 버튼·진행 경로. Duolingo 계열.", chips:["학습","게임","통통"] },
     ];
-    const el = document.getElementById("styles");
-    el.innerHTML = STYLES.map(s => `
-      <a class="style" href="styles/${s.dir}/showcase.html">
-        <div class="preview"><span class="no">${s.no}</span><span class="veil"></span>
-          <iframe src="styles/${s.dir}/showcase.html" loading="lazy" scrolling="no" tabindex="-1"></iframe></div>
+    const FRAMEWORKS = [
+      { dir:"frameworks/bootstrap", name:"Bootstrap 5", desc:"세계에서 가장 널리 쓰이는 프레임워크. 익숙하고 안정적인 기업용 룩.", chips:["표준","기업용","방대"] },
+      { dir:"frameworks/bulma", name:"Bulma", desc:"Flexbox 기반 순수 CSS. 깔끔하고 모던, JS 불필요.", chips:["모던","CSS전용","가벼움"] },
+      { dir:"frameworks/pico", name:"Pico.css", desc:"클래스 거의 없이 시맨틱 태그만으로 우아하게. 다크모드 자동.", chips:["미니멀","시맨틱","우아"] },
+      { dir:"frameworks/nes", name:"NES.css", desc:"8비트 픽셀 아트 UI. 게임·레트로 컨셉에 최적.", chips:["8비트","게임","레트로"] },
+      { dir:"frameworks/win98", name:"98.css", desc:"Windows 98 UI 재현. 향수·개성 만점의 창·타이틀바.", chips:["레트로","향수","개성"] },
+      { dir:"frameworks/simple", name:"Simple.css", desc:"클래스 0개. 시맨틱 HTML만으로 아름다운 문서. 블로그·읽을거리용.", chips:["클래스리스","문서","초경량"] },
+    ];
+    const card = (s, iframe) => `
+      <a class="style" href="${s.dir}/showcase.html">
+        <div class="preview">${s.no?`<span class="no">${s.no}</span>`:""}<span class="veil"></span>
+          <iframe src="${iframe}" loading="lazy" scrolling="no" tabindex="-1"></iframe></div>
         <div class="body">
           <h2>${s.name}</h2>
           <p>${s.desc}</p>
           <div class="chips">${s.chips.map(c=>`<span class="chip">${c}</span>`).join("")}</div>
         </div>
-      </a>`).join("");
+      </a>`;
+    document.getElementById("styles").innerHTML =
+      STYLES.map(s => card({...s, dir:`styles/${s.dir}`}, `styles/${s.dir}/showcase.html`)).join("");
+    document.getElementById("frameworks").innerHTML =
+      FRAMEWORKS.map(s => card(s, `${s.dir}/showcase.html`)).join("");
   </script>
 </body>
 </html>

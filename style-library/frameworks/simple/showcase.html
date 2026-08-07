@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple.css · showcase</title>
+  <link rel="stylesheet" href="simple.min.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#">홈</a>
+      <a href="#">글</a>
+      <a href="#">소개</a>
+      <a href="../../index.html">← 카탈로그</a>
+    </nav>
+    <h1>클래스 0개, 아름다운 기본값</h1>
+    <p>Simple.css는 클래스를 전혀 쓰지 않습니다. 순수 시맨틱 태그만으로 이 화면이 완성됐어요. 블로그·문서·읽을거리에 최적.</p>
+    <p><a href="#" role="button">글 읽기</a></p>
+  </header>
+
+  <main>
+    <section>
+      <h2>수업 일지</h2>
+      <p>오늘은 <mark>광합성</mark>과 <strong>물질 순환</strong>을 다뤘다. 학생들의 반응이 좋았고, 특히 실험 활동에서 몰입도가 높았다.</p>
+      <blockquote>
+        "가르친다는 것은 두 번 배우는 것이다."
+        <footer><cite>— Joseph Joubert</cite></footer>
+      </blockquote>
+
+      <h3>오늘의 핵심</h3>
+      <ul>
+        <li>생산자는 빛에너지로 양분을 합성한다.</li>
+        <li>에너지는 흐르고, 물질은 순환한다.</li>
+        <li>먹이 그물은 여러 먹이 사슬의 연결이다.</li>
+      </ul>
+
+      <h3>코드 예시</h3>
+      <pre><code>function 광합성(빛, 물, 이산화탄소) {
+  return 포도당 + 산소;
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>표와 폼</h2>
+      <table>
+        <thead><tr><th>반</th><th>과목</th><th>진도</th></tr></thead>
+        <tbody>
+          <tr><td>1반</td><td>국어</td><td>100%</td></tr>
+          <tr><td>2반</td><td>수학</td><td>60%</td></tr>
+          <tr><td>3반</td><td>과학</td><td>15%</td></tr>
+        </tbody>
+      </table>
+
+      <form>
+        <label>이름<input placeholder="홍길동"></label>
+        <label>분야
+          <select><option>국어</option><option>수학</option><option>과학</option></select>
+        </label>
+        <label>메모<textarea placeholder="자유롭게 적어주세요"></textarea></label>
+        <button type="button">제출</button>
+      </form>
+    </section>
+
+    <aside>
+      💡 <strong>참고</strong> — Simple.css는 다크모드를 자동 지원하고, 파일 하나(12KB)면 끝납니다.
+    </aside>
+  </main>
+
+  <footer>
+    <p>Simple.css · 실제 라이브러리 — style-library / frameworks</p>
+  </footer>
+</body>
+</html>

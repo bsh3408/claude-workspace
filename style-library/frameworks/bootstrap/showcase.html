@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap 5 · showcase</title>
+  <!-- 실제 Bootstrap 5 CSS (npm 설치본을 내장) -->
+  <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">🅱️ Bootstrap</a>
+      <div class="navbar-nav me-auto">
+        <a class="nav-link active" href="#">홈</a>
+        <a class="nav-link" href="#">기능</a>
+        <a class="nav-link" href="#">문서</a>
+      </div>
+      <a href="../../index.html" class="btn btn-light btn-sm">← 카탈로그</a>
+    </div>
+  </nav>
+
+  <header class="bg-body-tertiary py-5 border-bottom">
+    <div class="container text-center">
+      <span class="badge text-bg-primary mb-3">가장 널리 쓰이는 프레임워크</span>
+      <h1 class="display-5 fw-bold">검증된 UI, 빠른 개발</h1>
+      <p class="lead text-secondary">Bootstrap 5의 실제 컴포넌트로 만든 화면입니다. 익숙하고 안정적인 기업용 룩.</p>
+      <div class="d-flex gap-2 justify-content-center">
+        <button class="btn btn-primary btn-lg">시작하기</button>
+        <button class="btn btn-outline-secondary btn-lg">더 보기</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">📚 강의 관리</h5>
+            <p class="card-text text-secondary">수업과 과제를 한곳에서 정리하세요.</p>
+            <a href="#" class="btn btn-primary btn-sm">열기</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">👩‍🎓 학생 현황</h5>
+            <p class="card-text text-secondary">출결과 성적을 실시간으로 확인.</p>
+            <a href="#" class="btn btn-primary btn-sm">열기</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">📊 통계</h5>
+            <p class="card-text text-secondary">한눈에 보는 학급 리포트.</p>
+            <a href="#" class="btn btn-primary btn-sm">열기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4 mt-1">
+      <div class="col-lg-7">
+        <div class="alert alert-success d-flex align-items-center" role="alert">
+          <span class="me-2">✅</span> 저장되었습니다. 모든 변경 사항이 반영됐어요.
+        </div>
+        <table class="table table-hover align-middle">
+          <thead><tr><th>이름</th><th>상태</th><th>진행</th></tr></thead>
+          <tbody>
+            <tr><td>1반 국어</td><td><span class="badge text-bg-success">완료</span></td><td>
+              <div class="progress" style="height:8px"><div class="progress-bar" style="width:100%"></div></div></td></tr>
+            <tr><td>2반 수학</td><td><span class="badge text-bg-warning">진행중</span></td><td>
+              <div class="progress" style="height:8px"><div class="progress-bar bg-warning" style="width:60%"></div></div></td></tr>
+            <tr><td>3반 과학</td><td><span class="badge text-bg-secondary">대기</span></td><td>
+              <div class="progress" style="height:8px"><div class="progress-bar bg-secondary" style="width:15%"></div></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-lg-5">
+        <div class="card">
+          <div class="card-header fw-semibold">참가 신청</div>
+          <div class="card-body">
+            <div class="mb-3"><label class="form-label">이름</label><input class="form-control" placeholder="홍길동"></div>
+            <div class="mb-3"><label class="form-label">분야</label>
+              <select class="form-select"><option>선택</option><option>국어</option><option>수학</option></select></div>
+            <div class="form-check mb-3"><input class="form-check-input" type="checkbox" id="c1"><label class="form-check-label" for="c1">약관에 동의합니다</label></div>
+            <button class="btn btn-primary w-100">제출</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-body-tertiary border-top py-3">
+    <div class="container text-secondary small d-flex justify-content-between">
+      <span>Bootstrap 5 · 실제 라이브러리</span><span>style-library / frameworks</span>
+    </div>
+  </footer>
+</body>
+</html>

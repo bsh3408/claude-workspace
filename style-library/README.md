@@ -13,18 +13,38 @@
 | **03** | 레트로 터미널 / 사이버 | 어두운 배경·모노스페이스·네온·스캔라인, CRT 감성 | 게임·개발도구·해커 무드 |
 | **04** | 따뜻한 오가닉 | 흙빛·크림·세이지 자연색·부드러운 세리프·둥근 형태 | 교육·도서·라이프스타일 |
 
+> 카탈로그에는 위 4종을 포함해 **10종의 손수 만든 스타일**(01~10: 브루탈리즘·에디토리얼·터미널·오가닉·모던SaaS·미니멀·스트리밍·핀테크·소셜·게이미피케이션)이 있습니다.
+>
 > 예시 요청: **"3번 느낌으로 퀴즈 앱 만들어줘"**, **"1번 스타일 대시보드"**, **"4번 톤으로 학습지"**
+
+## 📦 설치한 실제 디자인 라이브러리 (`frameworks/`)
+
+손으로 짠 CSS 특유의 "AI 티"를 없애고 싶을 때 — 프로덕션에서 널리 쓰이는 라이브러리를 **npm으로 설치해 CSS를 프로젝트에 내장**했습니다. 각 라이브러리 고유의 룩을 그대로 쓰며, 오프라인에서도 열립니다.
+
+| 라이브러리 | 느낌 | 어울리는 곳 |
+|---|---|---|
+| **Bootstrap 5** | 가장 널리 쓰이는 표준, 안정적 기업용 | 관리자·업무용 앱 |
+| **Bulma** | Flexbox 기반 순수 CSS, 깔끔·모던 | 일반 웹앱·랜딩 |
+| **Pico.css** | 클래스 거의 없이 시맨틱, 우아·다크모드 자동 | 문서·경량 앱 |
+| **NES.css** | 8비트 픽셀 아트 UI | 게임·레트로 |
+| **98.css** | Windows 98 재현, 창·타이틀바 | 향수·개성 컨셉 |
+| **Simple.css** | 클래스 0개, 시맨틱 HTML만 | 블로그·읽을거리 |
+
+> 예시 요청: **"Bootstrap으로 출결 관리 앱"**, **"NES.css로 게임 메뉴"**, **"Pico로 학급 홈페이지"**
+>
+> 다른 라이브러리(예: Tailwind·DaisyUI·Bulma 테마·Water.css 등)도 요청하면 추가로 설치해 드립니다.
 
 ## 📁 구성
 
 ```
 style-library/
 ├── index.html                     # 스타일 카탈로그 (여기부터 열어보세요)
-├── styles/                        # ▶ 디자인 결 4종 (번호별 테마 + 쇼케이스)
-│   ├── 01-brutalism/  theme.css · showcase.html
-│   ├── 02-editorial/  theme.css · showcase.html
-│   ├── 03-terminal/   theme.css · showcase.html
-│   └── 04-organic/    theme.css · showcase.html
+├── styles/                        # ▶ 손수 만든 디자인 결 10종 (번호별 theme.css + showcase.html)
+│   ├── 01-brutalism/ · 02-editorial/ · 03-terminal/ · 04-organic/ · 05-saas/
+│   └── 06-apple/ · 07-stream/ · 08-toss/ · 09-social/ · 10-playful/
+├── frameworks/                    # ▶ 설치한 실제 라이브러리 (CSS 내장 + showcase.html)
+│   ├── bootstrap/ · bulma/ · pico/
+│   └── nes/ · win98/ · simple/
 ├── css/
 │   └── library.css                # 스타일 무관 중립 컴포넌트 (기본 템플릿용)
 └── templates/                     # ▶ 구조 위주의 중립 레이아웃
