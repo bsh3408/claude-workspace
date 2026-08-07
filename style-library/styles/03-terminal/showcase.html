@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03 · 레트로 터미널</title>
+  <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="term">
+      <div class="term-bar">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="path">~/style-library/03-terminal — bash</span>
+      </div>
+      <div class="term-body">
+
+        <!-- 내비 -->
+        <div class="nav">
+          <span class="brand">◆ STYLE_03</span>
+          <div class="links">
+            <a href="#" class="on">home</a>
+            <a href="#">docs</a>
+            <a href="../../index.html">catalog</a>
+          </div>
+        </div>
+
+        <!-- 히어로 -->
+        <p class="prompt"><b>guest@neon</b>:~$ ./run --style retro-terminal</p>
+        <h1>SYSTEM ONLINE<span class="cursor"></span></h1>
+        <p class="lead">어두운 배경 · 모노스페이스 · 네온 글로우 · 스캔라인. 게임·개발 도구·해커 무드에 딱 맞는 CRT 감성 레이아웃.</p>
+        <div style="margin-top:22px; display:flex; gap:14px; flex-wrap:wrap;">
+          <a href="#" class="btn">boot</a>
+          <a href="#" class="btn cyan">connect</a>
+          <a href="#" class="btn amber">help</a>
+        </div>
+
+        <!-- 모듈 -->
+        <div class="section-title">modules</div>
+        <div class="grid cols-3">
+          <div class="card"><div class="ico">▚</div><h3>scanlines</h3><p>CRT 주사선 오버레이로 브라운관 질감을 더합니다.</p></div>
+          <div class="card"><div class="ico">✶</div><h3>neon glow</h3><p>text-shadow로 형광 발광 효과를 냅니다.</p></div>
+          <div class="card"><div class="ico">▮</div><h3>blink cursor</h3><p>깜빡이는 커서로 살아있는 터미널 느낌.</p></div>
+        </div>
+
+        <!-- 통계 -->
+        <div class="section-title">status</div>
+        <div class="grid cols-3">
+          <div class="stat"><div class="num">99.9%</div><div class="lbl">uptime</div></div>
+          <div class="stat"><div class="num">2ms</div><div class="lbl">latency</div></div>
+          <div class="stat"><div class="num">1337</div><div class="lbl">nodes</div></div>
+        </div>
+
+        <!-- 폼 + 표 -->
+        <div class="section-title">access</div>
+        <div class="grid cols-2">
+          <div class="card">
+            <h3 style="margin-bottom:16px;">login</h3>
+            <div class="field"><label>user</label><input class="input" placeholder="guest"></div>
+            <div class="field"><label>key</label><input class="input" type="password" placeholder="********"></div>
+            <a href="#" class="btn">authenticate</a>
+          </div>
+          <div class="card">
+            <table class="table">
+              <thead><tr><th>process</th><th>state</th></tr></thead>
+              <tbody>
+                <tr><td>render.js</td><td><span class="badge ok">running</span></td></tr>
+                <tr><td>sync.js</td><td><span class="badge warn">idle</span></td></tr>
+                <tr><td>legacy.js</td><td><span class="badge err">failed</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="foot">◆ STYLE_03 · RETRO TERMINAL — process exited with code 0</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
