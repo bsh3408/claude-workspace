@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko" data-color-mode="light" data-light-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Primer CSS · showcase</title>
+  <link rel="stylesheet" href="primer.css">
+  <style>
+    body{font-family:"Pretendard",-apple-system,"Malgun Gothic",sans-serif;background:#f6f8fa;margin:0}
+    .ghhead{background:#24292f;color:#fff;padding:12px 16px;display:flex;align-items:center;gap:12px}
+    .ghhead input{background:#3a3f45;border:1px solid #52575d;color:#fff;border-radius:6px;padding:5px 10px;font-size:.85rem}
+    .wrap{max-width:900px;margin:24px auto;padding:0 16px}
+  </style>
+</head>
+<body>
+  <div class="ghhead">
+    <span style="font-size:1.2rem">🐙</span>
+    <strong>Primer</strong>
+    <input placeholder="Search or jump to…" style="margin-left:8px">
+    <a href="../../index.html" class="btn btn-sm" style="margin-left:auto">← 카탈로그</a>
+  </div>
+
+  <div class="wrap">
+    <div class="d-flex flex-items-center mb-3" style="gap:8px">
+      <h1 class="f2">📦 my-class-app</h1>
+      <span class="Label Label--success">Public</span>
+    </div>
+    <p class="color-fg-muted mb-3">GitHub의 실제 디자인 시스템 Primer로 만든 화면입니다. 익숙한 그 느낌 그대로.</p>
+    <div class="mb-4" style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn btn-primary"><span>⭐ Star</span> <span class="Counter">128</span></button>
+      <button class="btn">🍴 Fork <span class="Counter">32</span></button>
+      <button class="btn btn-outline">Watch</button>
+    </div>
+
+    <div class="flash flash-success mb-2">✅ 저장되었습니다.</div>
+    <div class="flash flash-warn mb-4">⚠️ 마감이 임박했어요.</div>
+
+    <div class="Box mb-4">
+      <div class="Box-header d-flex flex-items-center">
+        <span class="State State--open" style="margin-right:8px">Open</span>
+        <strong class="flex-auto">이슈 &amp; 과제</strong>
+        <button class="btn btn-primary btn-sm">New</button>
+      </div>
+      <div class="Box-row d-flex flex-items-center">
+        <span style="margin-right:8px">🟢</span>
+        <span class="flex-auto">1반 국어 수행평가 채점 <span class="Label Label--accent">교육</span></span>
+        <span class="color-fg-muted f6">2일 전</span>
+      </div>
+      <div class="Box-row d-flex flex-items-center">
+        <span style="margin-right:8px">🟢</span>
+        <span class="flex-auto">2반 수학 과제 취합 <span class="Label">과제</span></span>
+        <span class="color-fg-muted f6">어제</span>
+      </div>
+      <div class="Box-row d-flex flex-items-center">
+        <span style="margin-right:8px">🟣</span>
+        <span class="flex-auto">3반 과학 실험 준비물 <span class="Label Label--danger">마감</span></span>
+        <span class="color-fg-muted f6">방금</span>
+      </div>
+    </div>
+
+    <div class="Box">
+      <div class="Box-header"><strong>참가 신청</strong></div>
+      <div class="Box-body">
+        <div class="form-group"><label class="d-block mb-1 text-bold">이름</label><input class="form-control" style="width:100%" placeholder="홍길동"></div>
+        <div class="form-group mt-3"><label class="d-block mb-1 text-bold">분야</label><select class="form-control" style="width:100%"><option>국어</option><option>수학</option></select></div>
+        <button class="btn btn-primary mt-3">제출</button>
+      </div>
+    </div>
+    <p class="text-center color-fg-muted mt-4"><small>Primer CSS · 실제 라이브러리 — style-library / frameworks</small></p>
+  </div>
+</body>
+</html>
