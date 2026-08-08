@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XP.css · showcase</title>
+  <link rel="stylesheet" href="xp.css">
+  <style>
+    body{margin:0;min-height:100vh;font-family:"Pretendard","Malgun Gothic",sans-serif;
+      background:linear-gradient(180deg,#5a8dd6 0%,#87b1e3 40%,#9fca57 55%,#7bb03a 100%)}
+    .desktop{display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start;padding:28px}
+    .window{width:340px}
+    .taskbar{position:fixed;left:0;right:0;bottom:0;height:34px;display:flex;align-items:center;gap:8px;padding:0 6px;
+      background:linear-gradient(180deg,#3168d5 0,#4993e6 8%,#2f70d8 45%,#2a5bc0 100%);box-shadow:inset 0 2px 2px rgba(255,255,255,.35)}
+    .start{background:linear-gradient(180deg,#5eac56,#3c8b34);color:#fff;font-weight:bold;font-style:italic;
+      border:none;border-radius:0 10px 10px 0;padding:4px 22px 4px 14px;box-shadow:inset 0 2px 2px rgba(255,255,255,.4)}
+    .clock{margin-left:auto;color:#fff;background:linear-gradient(180deg,#1a8ec7,#1275b0);padding:5px 12px;font-size:.85rem}
+  </style>
+</head>
+<body>
+  <div class="desktop">
+    <div class="window">
+      <div class="title-bar">
+        <div class="title-bar-text">📋 참가 신청</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <div class="field-row-stacked"><label for="nm">이름</label><input id="nm" type="text" placeholder="홍길동"></div>
+        <div class="field-row-stacked"><label for="sel">분야</label>
+          <select id="sel"><option>국어</option><option>수학</option><option>과학</option></select></div>
+        <div class="field-row"><input id="ag" type="checkbox"><label for="ag">약관에 동의합니다</label></div>
+        <section class="field-row" style="justify-content:flex-end;gap:6px;margin-top:10px">
+          <button>취소</button><button>확인</button>
+        </section>
+      </div>
+    </div>
+
+    <div class="window">
+      <div class="title-bar">
+        <div class="title-bar-text">ℹ️ 도움말</div>
+        <div class="title-bar-controls"><button aria-label="Close"></button></div>
+      </div>
+      <div class="window-body">
+        <menu role="tablist">
+          <li role="tab" aria-selected="true"><a href="#">개요</a></li>
+          <li role="tab"><a href="#">상세</a></li>
+        </menu>
+        <div class="window" role="tabpanel"><div class="window-body">
+          <p>XP.css는 Windows XP UI를 재현한 실제 CSS 라이브러리입니다. 파란 타이틀바와 초록 시작 버튼이 특징이죠.</p>
+          <div class="field-row"><label>진행</label><progress max="100" value="66"></progress></div>
+          <fieldset>
+            <legend>테마</legend>
+            <div class="field-row"><input id="r1" type="radio" name="t" checked><label for="r1">Luna(파랑)</label></div>
+            <div class="field-row"><input id="r2" type="radio" name="t"><label for="r2">Olive(초록)</label></div>
+          </fieldset>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="window" style="width:270px">
+      <div class="title-bar"><div class="title-bar-text">🎮 카드 게임</div>
+        <div class="title-bar-controls"><button aria-label="Close"></button></div></div>
+      <div class="window-body">
+        <p>오늘의 선택지</p>
+        <div class="field-row" style="gap:6px"><button style="flex:1">← 거절</button><button style="flex:1">수락 →</button></div>
+        <div class="field-row" style="margin-top:10px"><label>HP</label><progress max="100" value="80"></progress></div>
+        <a href="../../index.html"><button style="margin-top:10px">← 카탈로그</button></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="taskbar">
+    <button class="start">start</button>
+    <span class="clock">9:41 AM</span>
+  </div>
+</body>
+</html>

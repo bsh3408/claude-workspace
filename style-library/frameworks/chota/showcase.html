@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chota · showcase</title>
+  <link rel="stylesheet" href="chota.min.css">
+  <style>:root{--color-primary:#1e88e5} body{padding-bottom:3rem}</style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-left"><a class="brand" href="#">🍫 Chota</a></div>
+    <div class="nav-right">
+      <a href="#">기능</a>
+      <a href="#">소개</a>
+      <a href="../../index.html" class="button outline">← 카탈로그</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="text-center" style="padding:3rem 0">
+      <span class="tag is-small" style="background:var(--color-primary);color:#fff">단 ~3KB</span>
+      <h1>초경량 마이크로 프레임워크</h1>
+      <p class="text-grey">꼭 필요한 것만 담은 아주 가벼운 CSS. 그리드·버튼·카드·폼을 바로 씁니다.</p>
+      <a class="button primary" href="#">시작하기</a>
+      <a class="button secondary" href="#">둘러보기</a>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <h4>📚 강의실</h4>
+          <p class="text-grey">실시간 수업과 자료 공유.</p>
+          <a class="button primary" href="#">입장</a>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <h4>📝 과제함</h4>
+          <p class="text-grey">제출 현황을 한눈에.</p>
+          <a class="button dark" href="#">확인</a>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <h4>📈 성적표</h4>
+          <p class="text-grey">자동 집계 리포트.</p>
+          <a class="button outline" href="#">보기</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:1.5rem">
+      <div class="col-7 col-12-md">
+        <div class="card">
+          <h4>참가 신청</h4>
+          <label>이름 <input type="text" placeholder="홍길동"></label>
+          <label>분야 <select><option>국어</option><option>수학</option><option>과학</option></select></label>
+          <label>메모 <textarea placeholder="자유롭게 적어주세요"></textarea></label>
+          <label><input type="checkbox"> 약관에 동의합니다</label>
+          <div style="margin-top:.5rem"><a class="button primary" href="#">제출</a></div>
+        </div>
+      </div>
+      <div class="col-5 col-12-md">
+        <div class="card">
+          <h4>현황</h4>
+          <table>
+            <tr><td>전체 학생</td><td class="text-right"><b>312</b></td></tr>
+            <tr><td>출석률</td><td class="text-right"><b>96%</b></td></tr>
+            <tr><td>제출 과제</td><td class="text-right"><b>1.2K</b></td></tr>
+          </table>
+          <span class="tag">교육</span> <span class="tag">과제</span> <span class="tag">알림</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-center text-grey" style="margin-top:2rem"><small>Chota · 실제 라이브러리 — style-library / frameworks</small></p>
+  </div>
+</body>
+</html>

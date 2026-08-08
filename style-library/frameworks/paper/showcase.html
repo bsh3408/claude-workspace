@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PaperCSS · showcase</title>
+  <link rel="stylesheet" href="paper.min.css">
+  <style>
+    /* PaperCSS 손글씨 폰트(Patrick Hand)는 온라인 폰트라 오프라인에선
+       손글씨 계열 시스템 폰트로 대체 — 특유의 삐뚤빼뚤 테두리는 그대로 유지됩니다. */
+    body{font-family:"Uiin","Cafe24Ssurround","Comic Sans MS","Gaegu",sans-serif;background:#fdfdfb}
+    .container{max-width:820px}
+  </style>
+</head>
+<body>
+  <div class="paper container margin-top-large">
+    <h1 class="text-center">✏️ PaperCSS</h1>
+    <p class="text-center measure-lg" style="margin:0 auto">손으로 그린 듯한 삐뚤빼뚤 스타일. 수업 자료·아동용·유쾌한 안내문에 잘 어울려요.</p>
+
+    <div class="row flex-center margin-top">
+      <button class="btn-primary">시작하기</button>
+      <button class="btn-secondary">둘러보기</button>
+      <button>취소</button>
+      <a href="../../index.html" class="paper-btn">← 카탈로그</a>
+    </div>
+
+    <div class="row margin-top">
+      <div class="col-4 col">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">📚 강의실</h4>
+            <p class="card-text">실시간 수업과 자료 공유.</p>
+            <button class="btn-small btn-primary">입장</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 col">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">📝 과제함</h4>
+            <p class="card-text">제출 현황을 한눈에.</p>
+            <button class="btn-small btn-secondary">확인</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 col">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">📈 성적표</h4>
+            <p class="card-text">자동 집계 리포트.</p>
+            <button class="btn-small btn-success">보기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row margin-top">
+      <div class="col-6 col">
+        <h4>참가 신청</h4>
+        <div class="form-group">
+          <label for="nm">이름</label>
+          <input type="text" id="nm" placeholder="홍길동">
+        </div>
+        <div class="form-group">
+          <label for="fd">분야</label>
+          <select id="fd"><option>국어</option><option>수학</option><option>과학</option></select>
+        </div>
+        <label class="paper-check"><input type="checkbox" name="paperChecks"><span>약관에 동의합니다</span></label>
+        <div class="margin-top"><button class="btn-primary btn-block">제출</button></div>
+      </div>
+      <div class="col-6 col">
+        <h4>안내</h4>
+        <div class="alert alert-primary">📢 이번 주 통합과학 수업 자료가 올라왔어요.</div>
+        <div class="alert alert-success">✅ 저장되었습니다.</div>
+        <span class="badge primary">교육</span>
+        <span class="badge success">완료</span>
+        <span class="badge danger">마감</span>
+        <blockquote>작은 습관이 큰 변화를 만든다.</blockquote>
+      </div>
+    </div>
+
+    <p class="text-center margin-top-large"><small>PaperCSS · 실제 라이브러리 — style-library / frameworks</small></p>
+  </div>
+</body>
+</html>
