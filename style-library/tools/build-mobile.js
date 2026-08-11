@@ -28,6 +28,10 @@ const ENTRIES = [
   ['styles','08 핀테크/토스','styles/08-toss/showcase.html','순백·블루·폰 목업·큰 버튼',['금융','모바일'],1080,760],
   ['styles','09 소셜 피드','styles/09-social/showcase.html','폰 프레임·스토리·피드·하단탭',['소셜','모바일'],540,900],
   ['styles','10 게이미피케이션','styles/10-playful/showcase.html','쨍한 그린·3D 버튼·진행 경로',['학습','게임'],1000,820],
+  ['styles','11 글래스모피즘','styles/11-glass/showcase.html','쨍한 그라데이션·반투명 유리 카드·백드롭 블러',['트렌디','미래적'],1120,760],
+  ['styles','12 뉴모피즘','styles/12-neu/showcase.html','단색 배경에서 밀려나온 부드러운 이중 그림자',['소프트','촉각적'],1120,800],
+  ['styles','13 클레이모피즘','styles/13-clay/showcase.html','말랑한 3D 점토 카드·파스텔·귀엽고 포근',['귀여움','파스텔'],1100,820],
+  ['styles','14 벤토 그리드','styles/14-bento/showcase.html','애플 키노트풍 비대칭 박스 그리드·프리미엄',['미니멀','프리미엄'],1160,820],
   ['frameworks','Bootstrap 5','frameworks/bootstrap/showcase.html','가장 널리 쓰는 표준·기업용',['표준','기업'],1200,820],
   ['frameworks','Bulma','frameworks/bulma/showcase.html','Flexbox 순수 CSS·깔끔 모던',['모던','CSS'],1200,820],
   ['frameworks','Pico.css','frameworks/pico/showcase.html','클래스 거의 없이 시맨틱·우아',['미니멀','시맨틱'],900,820],
@@ -181,13 +185,13 @@ footer{margin-top:34px;text-align:center;color:var(--muted);font-size:.8rem}
   <header>
     <p class="kick">Style Catalog · Mobile</p>
     <h1>디자인 카탈로그</h1>
-    <p class="sub">카드를 눌러 실제 화면을 보세요. 스타일 10 · 라이브러리 25 · 애니메이션 2 · 템플릿 6.</p>
+    <p class="sub">카드를 눌러 실제 화면을 보세요. 스타일 14 · 라이브러리 25 · 애니메이션 2 · 템플릿 6.</p>
     <div class="tip">💡 마음에 드는 걸 고른 뒤 <b>"08번 톤으로 앱 만들어줘"</b> 또는 <b>"NES.css로 게임"</b> 처럼 알려주세요.</div>
   </header>
 
   <nav class="tabs">
     <div class="tab on" data-f="all">전체</div>
-    <div class="tab" data-f="styles">스타일 10</div>
+    <div class="tab" data-f="styles">스타일 14</div>
     <div class="tab" data-f="frameworks">라이브러리 25</div>
     <div class="tab" data-f="animations">애니메이션 2</div>
     <div class="tab" data-f="templates">템플릿 6</div>
