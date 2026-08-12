@@ -32,6 +32,11 @@ const ENTRIES = [
   ['styles','12 뉴모피즘','styles/12-neu/showcase.html','단색 배경에서 밀려나온 부드러운 이중 그림자',['소프트','촉각적'],1120,800],
   ['styles','13 클레이모피즘','styles/13-clay/showcase.html','말랑한 3D 점토 카드·파스텔·귀엽고 포근',['귀여움','파스텔'],1100,820],
   ['styles','14 벤토 그리드','styles/14-bento/showcase.html','애플 키노트풍 비대칭 박스 그리드·프리미엄',['미니멀','프리미엄'],1160,820],
+  ['styles','15 Y2K 레트로 퓨처','styles/15-y2k/showcase.html','홀로그램 그라데이션·크롬 메탈릭·반짝이',['Y2K','크롬'],1120,780],
+  ['styles','16 다크 럭셔리','styles/16-luxe/showcase.html','블랙&골드·세리프 헤드라인·헤어라인',['럭셔리','골드'],1120,820],
+  ['styles','17 코퍼릿 멤피스','styles/17-memphis/showcase.html','크림 배경·쨍한 플랫 컬러·둥근 산세리프',['플랫','일러스트'],1120,820],
+  ['styles','18 오로라 메시','styles/18-aurora/showcase.html','핑크·민트·스카이 메시 그라데이션·프로스티드',['몽환','그라데이션'],1120,800],
+  ['styles','19 사이버펑크 네온','styles/19-cyber/showcase.html','딥 다크·네온 마젠타/시안·HUD 패널',['네온','테크'],1160,820],
   ['frameworks','Bootstrap 5','frameworks/bootstrap/showcase.html','가장 널리 쓰는 표준·기업용',['표준','기업'],1200,820],
   ['frameworks','Bulma','frameworks/bulma/showcase.html','Flexbox 순수 CSS·깔끔 모던',['모던','CSS'],1200,820],
   ['frameworks','Pico.css','frameworks/pico/showcase.html','클래스 거의 없이 시맨틱·우아',['미니멀','시맨틱'],900,820],
@@ -185,13 +190,13 @@ footer{margin-top:34px;text-align:center;color:var(--muted);font-size:.8rem}
   <header>
     <p class="kick">Style Catalog · Mobile</p>
     <h1>디자인 카탈로그</h1>
-    <p class="sub">카드를 눌러 실제 화면을 보세요. 스타일 14 · 라이브러리 25 · 애니메이션 2 · 템플릿 6.</p>
+    <p class="sub">카드를 눌러 실제 화면을 보세요. 스타일 19 · 라이브러리 25 · 애니메이션 2 · 템플릿 6.</p>
     <div class="tip">💡 마음에 드는 걸 고른 뒤 <b>"08번 톤으로 앱 만들어줘"</b> 또는 <b>"NES.css로 게임"</b> 처럼 알려주세요.</div>
   </header>
 
   <nav class="tabs">
     <div class="tab on" data-f="all">전체</div>
-    <div class="tab" data-f="styles">스타일 14</div>
+    <div class="tab" data-f="styles">스타일 19</div>
     <div class="tab" data-f="frameworks">라이브러리 25</div>
     <div class="tab" data-f="animations">애니메이션 2</div>
     <div class="tab" data-f="templates">템플릿 6</div>
