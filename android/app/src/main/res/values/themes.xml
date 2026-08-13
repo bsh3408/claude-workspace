@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.AiYeppeun" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <!--
+      호출한 앱(카톡 등) 위에 그대로 떠 있는 것처럼 보이게 하는 테마.
+      배경을 투명하게 두어야 "다른 앱으로 나갔다"는 느낌이 사라진다.
+    -->
+    <style name="Theme.AiYeppeun.Transparent" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+</resources>

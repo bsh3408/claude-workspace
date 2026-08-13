@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">아이예뻐</string>
+    <!-- 텍스트 선택 메뉴에 표시되는 글자. 메뉴 폭이 좁아 길면 잘린다. -->
+    <string name="process_text_label">아이예뻐</string>
+</resources>
