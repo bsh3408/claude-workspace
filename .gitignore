@@ -1,0 +1,12 @@
+# 비밀 값은 절대 커밋하지 않는다 (공개 레포)
+.env
+.env.*
+!.env.example
+*.local
+secrets.*
+*.key
+*.pem
+
+# 의존성/빌드 부산물
+node_modules/
+package-lock.json
