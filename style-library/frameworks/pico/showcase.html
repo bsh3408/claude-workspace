@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pico.css · showcase</title>
+  <link rel="stylesheet" href="pico.min.css">
+</head>
+<body>
+  <nav class="container-fluid">
+    <ul><li><strong>🩷 Pico</strong></li></ul>
+    <ul>
+      <li><a href="#">홈</a></li>
+      <li><a href="#">기능</a></li>
+      <li><a href="../../index.html" role="button" class="secondary outline">← 카탈로그</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <hgroup>
+      <h1>클래스 없이도 아름답게</h1>
+      <p>Pico.css는 시맨틱 HTML만으로 우아한 화면을 만듭니다. 아래는 거의 순수 태그입니다.</p>
+    </hgroup>
+
+    <div class="grid">
+      <button>시작하기</button>
+      <button class="secondary">둘러보기</button>
+      <button class="contrast">문의</button>
+    </div>
+
+    <section>
+      <div class="grid">
+        <article>
+          <header><strong>📚 강의</strong></header>
+          오늘의 수업 자료와 공지를 확인하세요.
+          <footer><a href="#" role="button" class="outline">열기</a></footer>
+        </article>
+        <article>
+          <header><strong>📝 과제</strong></header>
+          제출 마감과 진행 상황을 관리합니다.
+          <footer><a href="#" role="button" class="outline">열기</a></footer>
+        </article>
+        <article>
+          <header><strong>📈 리포트</strong></header>
+          학급 통계를 자동으로 정리합니다.
+          <footer><a href="#" role="button" class="outline">열기</a></footer>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>신청 폼</h2>
+      <form>
+        <div class="grid">
+          <label>이름 <input placeholder="홍길동"></label>
+          <label>분야
+            <select><option>국어</option><option>수학</option><option>과학</option></select>
+          </label>
+        </div>
+        <label>메모 <textarea placeholder="자유롭게 적어주세요"></textarea></label>
+        <label><input type="checkbox" role="switch"> 알림 받기</label>
+        <button type="button">제출</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>진행 상황</h2>
+      <progress value="72" max="100"></progress>
+      <details>
+        <summary>Pico.css란?</summary>
+        최소한의 클래스와 시맨틱 태그로 반응형·다크모드까지 지원하는 초경량 CSS 프레임워크입니다.
+      </details>
+    </section>
+  </main>
+
+  <footer class="container"><small>Pico.css · 실제 라이브러리 — style-library / frameworks</small></footer>
+</body>
+</html>

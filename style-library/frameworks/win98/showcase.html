@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>98.css · showcase</title>
+  <link rel="stylesheet" href="98.css">
+  <style>
+    body{background:#008080;padding:28px;font-family:"Pretendard","Malgun Gothic",sans-serif}
+    .desktop{display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start}
+    .window{width:340px}
+    .taskbar{position:fixed;left:0;right:0;bottom:0;background:silver;border-top:2px solid #fff;
+      box-shadow:inset 0 1px 0 #dfdfdf;padding:3px 6px;display:flex;gap:6px;align-items:center}
+  </style>
+</head>
+<body>
+  <div class="desktop">
+    <!-- 창 1: 신청서 -->
+    <div class="window">
+      <div class="title-bar">
+        <div class="title-bar-text">📋 참가 신청.exe</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <div class="field-row-stacked">
+          <label for="nm">이름</label>
+          <input id="nm" type="text" placeholder="홍길동">
+        </div>
+        <div class="field-row-stacked">
+          <label for="sel">분야</label>
+          <select id="sel"><option>국어</option><option>수학</option><option>과학</option></select>
+        </div>
+        <div class="field-row"><input id="ag" type="checkbox"><label for="ag">약관에 동의합니다</label></div>
+        <section class="field-row" style="justify-content:flex-end;gap:6px;margin-top:10px">
+          <button>취소</button><button>확인</button>
+        </section>
+      </div>
+    </div>
+
+    <!-- 창 2: 안내 + 탭 -->
+    <div class="window">
+      <div class="title-bar">
+        <div class="title-bar-text">ℹ️ 도움말</div>
+        <div class="title-bar-controls"><button aria-label="Close"></button></div>
+      </div>
+      <div class="window-body">
+        <menu role="tablist">
+          <li role="tab" aria-selected="true"><a href="#">개요</a></li>
+          <li role="tab"><a href="#">상세</a></li>
+        </menu>
+        <div class="window" role="tabpanel">
+          <div class="window-body">
+            <p>98.css는 Windows 98 UI를 재현한 실제 CSS 라이브러리입니다. 레트로/향수 컨셉에 딱.</p>
+            <div class="field-row">
+              <label>진행</label>
+              <progress max="100" value="66"></progress>
+            </div>
+            <fieldset>
+              <legend>테마</legend>
+              <div class="field-row"><input id="r1" type="radio" name="t" checked><label for="r1">클래식</label></div>
+              <div class="field-row"><input id="r2" type="radio" name="t"><label for="r2">하이컨트라스트</label></div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 창 3: 게임 -->
+    <div class="window" style="width:260px">
+      <div class="title-bar">
+        <div class="title-bar-text">🎮 지뢰찾기</div>
+        <div class="title-bar-controls"><button aria-label="Close"></button></div>
+      </div>
+      <div class="window-body">
+        <p class="status-bar-field" style="text-align:center;font-size:1.6rem">🙂</p>
+        <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:2px">
+          <button>1</button><button>2</button><button></button><button>💣</button><button>1</button><button></button>
+          <button></button><button>1</button><button>1</button><button>2</button><button>1</button><button></button>
+          <button>1</button><button>1</button><button></button><button></button><button></button><button>1</button>
+        </div>
+        <div class="status-bar" style="margin-top:8px">
+          <p class="status-bar-field">지뢰: 10</p>
+          <p class="status-bar-field">시간: 042</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="taskbar">
+    <button style="font-weight:bold">🪟 시작</button>
+    <button>📋 참가 신청.exe</button>
+    <a href="../../index.html"><button>← 카탈로그</button></a>
+    <span style="margin-left:auto;border:1px inset #fff;padding:2px 8px;background:silver">🔊 9:41</span>
+  </div>
+</body>
+</html>

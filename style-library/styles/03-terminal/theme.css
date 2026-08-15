@@ -1,0 +1,117 @@
+/* ============================================================
+   STYLE 03 · RETRO TERMINAL / CYBER  (레트로 터미널)
+   어두운 배경 · 모노스페이스 · 네온 컬러 · 스캔라인 · CRT 글로우
+   ============================================================ */
+:root {
+  --bg: #0a0e0a;
+  --panel: #0e150e;
+  --green: #33ff99;
+  --amber: #ffcc33;
+  --cyan: #33e6ff;
+  --magenta: #ff5cc8;
+  --dim: #4f6b52;
+  --line: #1c2a1c;
+  --mono: "SFMono-Regular", "JetBrains Mono", Consolas, "D2Coding", "Liberation Mono", "Courier New", monospace;
+}
+* { box-sizing: border-box; margin: 0; }
+body {
+  font-family: var(--mono); background: var(--bg); color: var(--green);
+  line-height: 1.6; min-height: 100vh; position: relative;
+}
+/* 스캔라인 오버레이 */
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+  background: repeating-linear-gradient(rgba(0,0,0,0) 0 2px, rgba(0,0,0,.25) 2px 3px);
+  mix-blend-mode: multiply;
+}
+.wrap { max-width: 960px; margin-inline: auto; padding: 28px; }
+
+h1,h2,h3 { font-family: var(--mono); font-weight: 700; letter-spacing: .02em;
+  text-shadow: 0 0 8px currentColor; }
+h1 { font-size: clamp(2rem, 6vw, 3.6rem); color: var(--green); }
+h2 { font-size: 1.6rem; color: var(--cyan); }
+h3 { font-size: 1.2rem; color: var(--amber); }
+a { color: var(--cyan); text-decoration: none; }
+a:hover { text-shadow: 0 0 8px var(--cyan); }
+::selection { background: var(--green); color: var(--bg); }
+
+/* 터미널 창 프레임 */
+.term { border: 1px solid var(--green); border-radius: 6px; background: var(--panel);
+  box-shadow: 0 0 0 1px rgba(51,255,153,.15), 0 0 24px rgba(51,255,153,.12); overflow: hidden; }
+.term-bar { display: flex; align-items: center; gap: 8px; padding: 8px 12px;
+  border-bottom: 1px solid var(--line); background: #0c120c; }
+.dot { width: 11px; height: 11px; border-radius: 50%; }
+.dot.r{background:var(--magenta);} .dot.y{background:var(--amber);} .dot.g{background:var(--green);}
+.term-bar .path { margin-left: 8px; color: var(--dim); font-size: .8rem; }
+.term-body { padding: 24px; }
+
+/* 내비 */
+.nav { display: flex; align-items: center; gap: 18px; margin-bottom: 26px; flex-wrap: wrap; }
+.brand { color: var(--green); font-weight: 700; text-shadow: 0 0 8px var(--green); }
+.nav .links { margin-left: auto; display: flex; gap: 16px; }
+.nav .links a::before { content: "["; color: var(--dim); }
+.nav .links a::after { content: "]"; color: var(--dim); }
+.nav .links a.on { color: var(--amber); }
+
+/* 프롬프트 라인 */
+.prompt { color: var(--dim); }
+.prompt b { color: var(--green); }
+.cursor { display: inline-block; width: 10px; height: 1.1em; background: var(--green);
+  vertical-align: -2px; margin-left: 2px; animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+.lead { color: var(--dim); font-size: 1.05rem; max-width: 620px; margin-top: 14px; }
+
+/* 버튼 */
+.btn { font-family: var(--mono); font-size: .95rem; padding: 11px 20px; cursor: pointer;
+  background: transparent; color: var(--green); border: 1px solid var(--green); border-radius: 4px;
+  text-decoration: none; display: inline-block; transition: all .15s; }
+.btn::before { content: "> "; }
+.btn:hover { background: var(--green); color: var(--bg); box-shadow: 0 0 16px rgba(51,255,153,.5); text-shadow: none; }
+.btn.cyan { color: var(--cyan); border-color: var(--cyan); }
+.btn.cyan:hover { background: var(--cyan); color: var(--bg); box-shadow: 0 0 16px rgba(51,230,255,.5); }
+.btn.amber { color: var(--amber); border-color: var(--amber); }
+.btn.amber:hover { background: var(--amber); color: var(--bg); }
+
+/* 그리드 & 카드 */
+.grid { display: grid; gap: 18px; }
+.cols-3 { grid-template-columns: repeat(3,1fr); }
+.cols-2 { grid-template-columns: repeat(2,1fr); }
+@media (max-width: 800px){ .cols-3,.cols-2{ grid-template-columns:1fr; } }
+.card { border: 1px solid var(--line); border-radius: 6px; background: rgba(51,255,153,.03); padding: 20px; }
+.card:hover { border-color: var(--green); box-shadow: 0 0 16px rgba(51,255,153,.15); }
+.card .ico { color: var(--amber); font-size: 1.4rem; margin-bottom: 10px; text-shadow: 0 0 8px var(--amber); }
+.card p { color: var(--dim); font-size: .95rem; margin-top: 8px; }
+
+/* 통계 */
+.stat { border: 1px solid var(--line); border-radius: 6px; padding: 18px; background: rgba(0,0,0,.2); }
+.stat .num { font-size: 2.6rem; color: var(--cyan); text-shadow: 0 0 10px var(--cyan); line-height: 1; }
+.stat .lbl { color: var(--dim); font-size: .8rem; margin-top: 6px; text-transform: uppercase; letter-spacing: .1em; }
+
+/* 배지 */
+.badge { border: 1px solid var(--green); border-radius: 3px; padding: 2px 8px; font-size: .72rem;
+  color: var(--green); }
+.badge.ok { color: var(--green); border-color: var(--green); }
+.badge.warn { color: var(--amber); border-color: var(--amber); }
+.badge.err { color: var(--magenta); border-color: var(--magenta); }
+
+/* 폼 */
+.field { margin-bottom: 16px; }
+.field label { display: block; color: var(--dim); font-size: .82rem; margin-bottom: 6px; }
+.field label::before { content: "// "; }
+.input,.textarea,.select { width: 100%; font-family: var(--mono); font-size: .95rem; padding: 10px 12px;
+  background: #060906; color: var(--green); border: 1px solid var(--line); border-radius: 4px; }
+.input:focus,.textarea:focus,.select:focus { outline: none; border-color: var(--green); box-shadow: 0 0 12px rgba(51,255,153,.25); }
+.input::placeholder,.textarea::placeholder { color: var(--dim); }
+.textarea { min-height: 90px; resize: vertical; }
+
+/* 표 */
+.table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+.table th,.table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+.table th { color: var(--amber); text-transform: uppercase; font-size: .76rem; letter-spacing: .1em; }
+.table tbody tr:hover, .table tbody tr:hover { background: rgba(51,255,153,.04); }
+
+/* 푸터 */
+.foot { margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--dim); font-size: .85rem; }
+.section-title { color: var(--amber); margin: 34px 0 16px; text-shadow: 0 0 8px var(--amber); }
+.section-title::before { content: "### "; color: var(--dim); text-shadow: none; }

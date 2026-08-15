@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>퀴즈 템플릿 (교육)</title>
+  <link rel="stylesheet" href="../css/library.css">
+  <style>
+    .quiz-wrap { max-width: 640px; margin: var(--sp-7) auto; padding-inline: var(--sp-4); }
+    .option {
+      display:block; width:100%; text-align:left; padding:1rem 1.1rem;
+      border:2px solid var(--border); border-radius:var(--radius);
+      background:var(--surface); color:var(--text); font-size:var(--fs-md);
+      font-family:inherit; cursor:pointer; transition:all var(--transition);
+    }
+    .option:hover:not(:disabled) { border-color:var(--brand); background:var(--brand-soft); }
+    .option.correct { border-color:var(--success); background:rgba(34,160,107,.12); }
+    .option.wrong { border-color:var(--danger); background:rgba(229,72,77,.1); }
+    .option:disabled { cursor:default; }
+    .qnum { font-weight:800; color:var(--brand); }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">❓ 통합과학 퀴즈</span>
+    <button class="btn btn-secondary btn-sm" id="theme-btn" style="margin-left:auto;">🌙</button>
+  </header>
+
+  <main class="quiz-wrap">
+    <!-- 문제 화면 -->
+    <div id="quiz-view">
+      <div class="row-between mb-4">
+        <span class="text-soft"><span class="qnum" id="cur">1</span> / <span id="total">3</span></span>
+        <span class="badge" id="score-badge">0점</span>
+      </div>
+      <div class="progress mb-6"><span id="bar" style="width:0%"></span></div>
+
+      <div class="card">
+        <p class="eyebrow" id="topic">개념 확인</p>
+        <h3 id="question" style="margin-top:var(--sp-2);"></h3>
+        <div class="stack-sm mt-6" id="options"></div>
+      </div>
+
+      <div class="cluster mt-6" style="justify-content:flex-end;">
+        <button class="btn hidden" id="next-btn">다음 문제 →</button>
+      </div>
+    </div>
+
+    <!-- 결과 화면 -->
+    <div id="result-view" class="card text-center hidden" style="padding-block:var(--sp-7);">
+      <div style="font-size:3.5rem;" id="result-emoji">🎉</div>
+      <h2 class="mt-4">퀴즈 완료!</h2>
+      <p class="stat-value mt-4" id="final-score" style="color:var(--brand);">0 / 3</p>
+      <p class="text-soft" id="result-msg"></p>
+      <button class="btn btn-lg mt-6" onclick="location.reload()">다시 풀기</button>
+    </div>
+  </main>
+
+  <script>
+    const QUIZ = [
+      { topic:"물질과 규칙성", q:"우주 초기에 가장 먼저 만들어진 원소는?",
+        options:["수소와 헬륨","탄소","철","산소"], answer:0 },
+      { topic:"시스템과 상호작용", q:"광합성에서 식물이 흡수하는 기체는?",
+        options:["산소","질소","이산화 탄소","수소"], answer:2 },
+      { topic:"변화와 다양성", q:"산과 염기가 만나 물과 염을 만드는 반응은?",
+        options:["산화","환원","중화","연소"], answer:2 },
+    ];
+
+    let idx = 0, score = 0;
+    const el = id => document.getElementById(id);
+    el('total').textContent = QUIZ.length;
+
+    function render() {
+      const item = QUIZ[idx];
+      el('cur').textContent = idx + 1;
+      el('topic').textContent = item.topic;
+      el('question').textContent = item.q;
+      el('bar').style.width = (idx / QUIZ.length * 100) + '%';
+      el('next-btn').classList.add('hidden');
+      const box = el('options');
+      box.innerHTML = '';
+      item.options.forEach((opt, i) => {
+        const b = document.createElement('button');
+        b.className = 'option';
+        b.textContent = opt;
+        b.onclick = () => choose(i, b);
+        box.appendChild(b);
+      });
+    }
+
+    function choose(i, btn) {
+      const item = QUIZ[idx];
+      document.querySelectorAll('.option').forEach(o => o.disabled = true);
+      if (i === item.answer) {
+        btn.classList.add('correct'); score++;
+        el('score-badge').textContent = score + '점';
+        el('score-badge').className = 'badge badge-success';
+      } else {
+        btn.classList.add('wrong');
+        document.querySelectorAll('.option')[item.answer].classList.add('correct');
+      }
+      el('next-btn').classList.remove('hidden');
+      el('next-btn').textContent = (idx === QUIZ.length - 1) ? '결과 보기 →' : '다음 문제 →';
+    }
+
+    el('next-btn').onclick = () => {
+      idx++;
+      if (idx < QUIZ.length) { render(); }
+      else { showResult(); }
+    };
+
+    function showResult() {
+      el('quiz-view').classList.add('hidden');
+      el('result-view').classList.remove('hidden');
+      el('final-score').textContent = score + ' / ' + QUIZ.length;
+      const rate = score / QUIZ.length;
+      el('result-emoji').textContent = rate === 1 ? '🏆' : rate >= 0.5 ? '👍' : '💪';
+      el('result-msg').textContent = rate === 1 ? '완벽해요! 모두 맞혔습니다.'
+        : rate >= 0.5 ? '잘했어요! 조금만 더 복습해봐요.' : '괜찮아요, 다시 도전해봐요!';
+    }
+
+    el('theme-btn').addEventListener('click', (e) => {
+      const html = document.documentElement;
+      const dark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', dark ? 'light' : 'dark');
+      e.target.textContent = dark ? '🌙' : '☀️';
+    });
+
+    render();
+  </script>
+</body>
+</html>

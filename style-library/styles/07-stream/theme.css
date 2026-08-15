@@ -1,0 +1,71 @@
+/* ============================================================
+   STYLE 07 · STREAMING DARK  (스트리밍 다크 — 뮤직 앱 계열)
+   딥 다크 · 비비드 그린 액센트 · 사이드바 + 앨범 그리드 + 하단 재생바
+   ============================================================ */
+:root{
+  --bg:#0a0a0a; --panel:#121212; --panel-2:#181818; --hover:#242424;
+  --text:#ffffff; --muted:#a7a7a7; --green:#1ed760; --line:#282828;
+  --sans:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","Helvetica Neue",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:var(--sans);background:#000;color:var(--text);line-height:1.5;min-height:100vh;-webkit-font-smoothing:antialiased}
+h1,h2,h3{letter-spacing:-.02em;font-weight:800}
+a{color:var(--text);text-decoration:none}
+
+/* 앱 셸: 사이드바 + 메인 + 하단바 */
+.app{display:grid;grid-template-columns:240px 1fr;grid-template-rows:1fr 84px;height:100vh;gap:8px;padding:8px;background:#000}
+@media(max-width:760px){.app{grid-template-columns:1fr}.sidebar{display:none}}
+
+/* 사이드바 */
+.sidebar{grid-row:1/2;background:var(--panel);border-radius:10px;padding:20px 12px;display:flex;flex-direction:column;gap:6px;overflow-y:auto}
+.brand{font-weight:800;font-size:1.2rem;padding:6px 12px 16px;display:flex;align-items:center;gap:8px}
+.brand .dot{width:22px;height:22px;border-radius:50%;background:var(--green)}
+.sidebar a{display:flex;align-items:center;gap:14px;padding:10px 12px;border-radius:6px;color:var(--muted);font-weight:700;font-size:.95rem}
+.sidebar a:hover{color:var(--text)}
+.sidebar a.on{color:var(--text)}
+.sidebar .lib{margin-top:16px;border-top:1px solid var(--line);padding-top:16px}
+
+/* 메인 (스크롤) */
+.main{grid-row:1/2;background:linear-gradient(180deg,#1f1f1f,var(--panel) 260px);border-radius:10px;overflow-y:auto;position:relative}
+.topbar{position:sticky;top:0;display:flex;align-items:center;gap:12px;padding:16px 24px;background:rgba(0,0,0,.2);backdrop-filter:blur(6px);z-index:5}
+.topbar .chip{background:rgba(0,0,0,.4);border-radius:999px;padding:7px 16px;font-size:.85rem;font-weight:700;color:var(--muted);cursor:pointer}
+.topbar .chip.on{background:#fff;color:#000}
+.topbar .avatar{margin-left:auto;width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#7c6cff,#1ed760)}
+.content{padding:8px 24px 32px}
+.content h2{font-size:1.6rem;margin:20px 0 14px}
+
+/* 버튼 */
+.btn{font-family:inherit;font-weight:800;font-size:.9rem;padding:12px 28px;border-radius:999px;border:none;cursor:pointer;
+  background:var(--green);color:#000;transition:transform .1s}
+.btn:hover{transform:scale(1.04)}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid #555}
+
+/* 앨범 그리드 */
+.grid{display:grid;gap:18px;grid-template-columns:repeat(4,1fr)}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
+.album{background:var(--panel-2);border-radius:8px;padding:14px;cursor:pointer;transition:background .2s;position:relative}
+.album:hover{background:var(--hover)}
+.cover{aspect-ratio:1;border-radius:6px;margin-bottom:12px;display:grid;place-items:center;font-size:2.4rem;box-shadow:0 8px 20px rgba(0,0,0,.4)}
+.album h3{font-size:1rem;margin-bottom:4px}
+.album p{color:var(--muted);font-size:.85rem}
+.play{position:absolute;right:22px;bottom:74px;width:48px;height:48px;border-radius:50%;background:var(--green);
+  color:#000;display:grid;place-items:center;font-size:1.3rem;opacity:0;transform:translateY(8px);transition:.2s;box-shadow:0 8px 18px rgba(0,0,0,.4)}
+.album:hover .play{opacity:1;transform:translateY(0)}
+
+/* 가로 리스트(재생목록 행) */
+.rows{display:flex;flex-direction:column;gap:2px}
+.trow{display:grid;grid-template-columns:24px 1fr auto;gap:16px;align-items:center;padding:8px 12px;border-radius:6px;color:var(--muted)}
+.trow:hover{background:var(--hover)}
+.trow .t{color:var(--text);font-weight:600}
+
+/* 하단 재생바 */
+.player{grid-column:1/-1;grid-row:2/3;background:var(--panel);border-radius:10px;display:flex;align-items:center;gap:16px;padding:0 18px}
+.player .np{display:flex;align-items:center;gap:12px;min-width:180px}
+.player .np .art{width:52px;height:52px;border-radius:6px;background:linear-gradient(135deg,#f857a6,#ff5858);flex:none}
+.player .np .t{font-size:.9rem;font-weight:600}.player .np .s{font-size:.78rem;color:var(--muted)}
+.player .ctr{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px}
+.player .btns{display:flex;gap:20px;align-items:center;font-size:1rem;color:var(--muted)}
+.player .btns .big{width:34px;height:34px;border-radius:50%;background:#fff;color:#000;display:grid;place-items:center}
+.player .bar{width:min(420px,50vw);height:4px;background:#4d4d4d;border-radius:2px}
+.player .bar>span{display:block;width:38%;height:100%;background:#fff;border-radius:2px}

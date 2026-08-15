@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style Catalog · 디자인 결 카탈로그</title>
+  <style>
+    :root{
+      --bg:#0e0f13; --panel:#171922; --line:#262a36; --text:#eceef4; --muted:#8b93a3; --hi:#e8c17a;
+      --sans:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","Helvetica Neue",system-ui,sans-serif;
+    }
+    *{box-sizing:border-box;margin:0}
+    body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;
+      background-image:radial-gradient(circle at 50% -10%,rgba(232,193,122,.08),transparent 45%)}
+    .wrap{max-width:1200px;margin-inline:auto;padding:56px 28px 80px}
+    header{margin-bottom:44px}
+    .kick{font-size:.8rem;letter-spacing:.28em;text-transform:uppercase;color:var(--hi);font-weight:700}
+    h1{font-size:clamp(2.4rem,6vw,3.6rem);letter-spacing:-.02em;margin:14px 0 18px}
+    .intro{color:var(--muted);max-width:660px;font-size:1.1rem}
+    .howto{margin-top:24px;background:var(--panel);border:1px solid var(--line);border-radius:14px;
+      padding:18px 22px;font-size:.98rem}
+    .howto b{color:var(--hi)}
+
+    .styles{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    @media(max-width:940px){.styles{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.styles{grid-template-columns:1fr}}
+    .style{display:block;text-decoration:none;color:inherit;background:var(--panel);
+      border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .2s,border-color .2s,box-shadow .2s}
+    .style:hover{transform:translateY(-4px);border-color:var(--hi);box-shadow:0 18px 40px rgba(0,0,0,.45)}
+    .preview{position:relative;height:210px;overflow:hidden;border-bottom:1px solid var(--line);background:#0c0e12}
+    .preview iframe{position:absolute;top:0;left:0;width:1250px;height:1050px;border:0;
+      transform:scale(.285);transform-origin:top left;pointer-events:none}
+    .preview .veil{position:absolute;inset:0;z-index:2}
+    .no{position:absolute;top:10px;left:12px;z-index:3;font-size:2rem;font-weight:800;letter-spacing:-.03em;
+      color:#fff;mix-blend-mode:difference;line-height:1}
+    .body{padding:18px 20px}
+    .body h2{font-size:1.15rem;margin-bottom:4px}
+    .body p{color:var(--muted);font-size:.9rem}
+    .chips{margin-top:12px;display:flex;gap:6px;flex-wrap:wrap}
+    .chip{font-size:.72rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 9px}
+
+    .fw-head{margin:64px 0 22px}
+    .fw-head h2{font-size:1.6rem;letter-spacing:-.01em}
+    .fw-head .tagline{font-size:.8rem;color:var(--hi);font-weight:600;margin-left:8px}
+    .fw-head p{color:var(--muted);font-size:.95rem;max-width:680px;margin-top:8px}
+    .legacy{margin-top:56px;border-top:1px solid var(--line);padding-top:28px}
+    .legacy h3{font-size:1.05rem;margin-bottom:6px}
+    .legacy p{color:var(--muted);font-size:.9rem;margin-bottom:14px}
+    .legacy .links{display:flex;gap:8px;flex-wrap:wrap}
+    .legacy a{font-size:.85rem;color:var(--text);background:var(--panel);border:1px solid var(--line);
+      border-radius:999px;padding:7px 14px;text-decoration:none}
+    .legacy a:hover{border-color:var(--hi);color:var(--hi)}
+    footer{margin-top:48px;color:var(--muted);font-size:.85rem;text-align:center}
+    .style.reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.7,.2,1)}
+    .style.reveal.in{opacity:1;transform:none}
+    @media (prefers-reduced-motion: reduce){.style.reveal{opacity:1;transform:none;transition:none}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="kick">Style Catalog · 10 Directions</p>
+      <h1>디자인 결 카탈로그</h1>
+      <p class="intro">실제 앱·웹서비스의 디자인 언어를 참고한 19가지 스타일. 마음에 드는 걸 골라 실제 화면을 확인하세요.</p>
+      <div class="howto">💡 앞으로 이렇게 요청하세요 — <b>"7번 느낌으로 앱 만들어줘"</b>,&nbsp; <b>"10번 스타일로 퀴즈"</b>,&nbsp; <b>"8번 톤 대시보드"</b></div>
+      <div class="howto" style="margin-top:12px">📱 <b>핸드폰</b>에서는 <a href="catalog-mobile.html" style="color:var(--hi);font-weight:700">catalog-mobile.html</a> 을 여세요 — 카드를 눌러 실제 화면까지 볼 수 있는 단일 파일입니다.</div>
+    </header>
+
+    <div class="styles" id="styles"></div>
+
+    <div class="fw-head">
+      <h2>설치한 실제 디자인 라이브러리 <span class="tagline">npm으로 설치 · 프로젝트에 내장</span></h2>
+      <p>제가 손으로 짠 CSS가 아니라, 프로덕션에서 널리 쓰이는 라이브러리를 그대로 설치해 각 라이브러리 고유의 룩으로 만든 화면입니다. (오프라인에서도 열립니다)</p>
+    </div>
+    <div class="styles" id="frameworks"></div>
+
+    <div class="fw-head">
+      <h2>애니메이션 라이브러리 <span class="tagline">움직임 추가</span></h2>
+      <p>화면에 생동감을 더하는 라이브러리. 클래스나 속성만 붙이면 등장·주목 효과가 적용됩니다.</p>
+    </div>
+    <div class="styles" id="anim"></div>
+
+    <div class="legacy">
+      <h3>기본 레이아웃 템플릿 (스타일 무관 · 구조 위주)</h3>
+      <p>대시보드·랜딩·폼 등 뼈대만 필요할 때. 위 스타일과 조합할 수 있어요.</p>
+      <div class="links">
+        <a href="templates/dashboard.html">대시보드</a>
+        <a href="templates/landing.html">랜딩</a>
+        <a href="templates/form.html">폼</a>
+        <a href="templates/quiz.html">퀴즈</a>
+        <a href="templates/worksheet.html">학습지</a>
+        <a href="templates/card-game.html">게임/카드</a>
+      </div>
+    </div>
+
+    <footer>style-library · claude-workspace</footer>
+  </div>
+
+  <script>
+    const STYLES = [
+      { no:"01", dir:"01-brutalism", name:"뉴 브루탈리즘", desc:"두꺼운 테두리·하드 그림자·쨍한 원색. 각지고 강한 개성.", chips:["강렬함","장난기","캠페인"] },
+      { no:"02", dir:"02-editorial", name:"에디토리얼 / 스위스", desc:"세리프 헤드라인·헤어라인·흑백+포인트 한 색. 잡지 절제미.", chips:["고급","절제","소개"] },
+      { no:"03", dir:"03-terminal", name:"레트로 터미널", desc:"모노스페이스·네온·스캔라인 CRT 감성.", chips:["테크","게임","해커"] },
+      { no:"04", dir:"04-organic", name:"따뜻한 오가닉", desc:"흙빛·크림·세이지 자연색·부드러운 세리프.", chips:["따뜻함","아늑함","교육"] },
+      { no:"05", dir:"05-saas", name:"모던 SaaS", desc:"다크·보라 글로우·글래스 내비. Linear/Vercel 계열.", chips:["세련","스타트업","랜딩"] },
+      { no:"06", dir:"06-apple", name:"미니멀 프로덕트", desc:"순백·초대형 타이포·넉넉한 여백. Apple 계열.", chips:["미니멀","제품","프리미엄"] },
+      { no:"07", dir:"07-stream", name:"스트리밍 다크", desc:"딥 다크·비비드 그린·앨범 그리드+재생바. 뮤직 앱.", chips:["미디어","앱 화면","다크"] },
+      { no:"08", dir:"08-toss", name:"핀테크 / 토스", desc:"순백·블루 한 색·큼직한 버튼·폰 목업. 한국 금융 앱.", chips:["금융","모바일","깔끔"] },
+      { no:"09", dir:"09-social", name:"소셜 피드", desc:"폰 프레임·스토리·피드·하단 탭. Instagram 계열.", chips:["소셜","모바일","피드"] },
+      { no:"10", dir:"10-playful", name:"게이미피케이션", desc:"쨍한 그린·눌리는 3D 버튼·진행 경로. Duolingo 계열.", chips:["학습","게임","통통"] },
+      { no:"11", dir:"11-glass", name:"글래스모피즘", desc:"쨍한 그라데이션 배경·반투명 유리 카드·백드롭 블러. 미래적.", chips:["트렌디","유리","미래적"] },
+      { no:"12", dir:"12-neu", name:"뉴모피즘", desc:"단색 배경에서 밀려나온 듯한 부드러운 이중 그림자. 소프트 UI.", chips:["소프트","촉각적","단색"] },
+      { no:"13", dir:"13-clay", name:"클레이모피즘", desc:"말랑한 3D 점토 카드·파스텔·큰 라운드. 귀엽고 포근.", chips:["귀여움","파스텔","말랑"] },
+      { no:"14", dir:"14-bento", name:"벤토 그리드", desc:"애플 키노트풍 비대칭 박스 그리드·큰 타이포. 미니멀 프리미엄.", chips:["미니멀","프리미엄","그리드"] },
+    ];
+    const FRAMEWORKS = [
+      { dir:"frameworks/bootstrap", name:"Bootstrap 5", desc:"세계에서 가장 널리 쓰이는 프레임워크. 익숙하고 안정적인 기업용 룩.", chips:["표준","기업용","방대"] },
+      { dir:"frameworks/bulma", name:"Bulma", desc:"Flexbox 기반 순수 CSS. 깔끔하고 모던, JS 불필요.", chips:["모던","CSS전용","가벼움"] },
+      { dir:"frameworks/pico", name:"Pico.css", desc:"클래스 거의 없이 시맨틱 태그만으로 우아하게. 다크모드 자동.", chips:["미니멀","시맨틱","우아"] },
+      { dir:"frameworks/nes", name:"NES.css", desc:"8비트 픽셀 아트 UI. 게임·레트로 컨셉에 최적.", chips:["8비트","게임","레트로"] },
+      { dir:"frameworks/win98", name:"98.css", desc:"Windows 98 UI 재현. 향수·개성 만점의 창·타이틀바.", chips:["레트로","향수","개성"] },
+      { dir:"frameworks/simple", name:"Simple.css", desc:"클래스 0개. 시맨틱 HTML만으로 아름다운 문서. 블로그·읽을거리용.", chips:["클래스리스","문서","초경량"] },
+      { dir:"frameworks/daisyui", name:"Tailwind + DaisyUI", desc:"요즘 가장 인기. 유틸리티+컴포넌트, 테마 30종. (실제 빌드 내장)", chips:["인기","테마","모던"] },
+      { dir:"frameworks/beer", name:"Beer CSS", desc:"구글 머티리얼 디자인 3. 부드러운 곡선과 동적 색상.", chips:["머티리얼","구글","MD3"] },
+      { dir:"frameworks/water", name:"Water.css", desc:"클래스 0개. 다크모드 자동. 초경량 클래스리스.", chips:["클래스리스","자동다크"] },
+      { dir:"frameworks/paper", name:"PaperCSS", desc:"손으로 그린 듯 삐뚤빼뚤. 유쾌·아동·수업 자료용.", chips:["손그림","유쾌","교육"] },
+      { dir:"frameworks/xp", name:"XP.css", desc:"Windows XP 재현. 파란 Luna 타이틀바·초록 start.", chips:["레트로","윈도우"] },
+      { dir:"frameworks/win7", name:"7.css", desc:"Windows 7 Aero 글래스. 반투명 유리창.", chips:["레트로","에어로"] },
+      { dir:"frameworks/sakura", name:"Sakura", desc:"클래스 0개. 몇 KB로 단정한 글 중심 페이지.", chips:["클래스리스","미니멀"] },
+      { dir:"frameworks/mvp", name:"MVP.css", desc:"클래스 0개. 헤더·카드·폼까지 시맨틱만으로.", chips:["클래스리스","프로토타입"] },
+      { dir:"frameworks/spectre", name:"Spectre.css", desc:"Flexbox 기반 경량 컴포넌트 프레임워크.", chips:["경량","컴포넌트"] },
+      { dir:"frameworks/tachyons", name:"Tachyons", desc:"원자적 유틸리티 클래스 조합. Tailwind의 원조.", chips:["유틸리티","원자적"] },
+      { dir:"frameworks/chota", name:"Chota", desc:"단 ~3KB 마이크로 프레임워크. 그리드·버튼·카드.", chips:["초경량","마이크로"] },
+      { dir:"frameworks/pure", name:"Pure.css", desc:"야후가 만든 모듈러 초경량(5.7KB). 반응형 그리드·폼.", chips:["야후","모듈러","경량"] },
+      { dir:"frameworks/uikit", name:"UIkit", desc:"세련된 기본값과 풍부한 컴포넌트. 실무에서 인기.", chips:["세련","컴포넌트"] },
+      { dir:"frameworks/foundation", name:"Foundation", desc:"엔터프라이즈급 반응형 프레임워크. 대규모 검증.", chips:["엔터프라이즈","견고"] },
+      { dir:"frameworks/milligram", name:"Milligram", desc:"단 2KB 초미니멀. 군더더기 없는 타이포·그리드.", chips:["미니멀","경량"] },
+      { dir:"frameworks/skeleton", name:"Skeleton", desc:"고전 미니멀 보일러플레이트. 12칼럼 그리드.", chips:["클래식","뼈대"] },
+      { dir:"frameworks/halfmoon", name:"Halfmoon", desc:"부트스트랩5 위 세련된 다크모드. 대시보드용.", chips:["다크","부트스트랩"] },
+      { dir:"frameworks/primer", name:"Primer CSS", desc:"GitHub의 디자인 시스템. 익숙한 그 느낌.", chips:["깃허브","디자인시스템"] },
+      { dir:"frameworks/openprops", name:"Open Props", desc:"컴포넌트 대신 디자인 토큰(색·간격·그림자·그라데이션).", chips:["토큰","변수","조합"] },
+    ];
+    const ANIM = [
+      { dir:"frameworks/animate", name:"Animate.css", desc:"가장 유명한 CSS 애니메이션. 클래스만 붙이면 끝. 눌러서 재생되는 데모.", chips:["애니메이션","인기","인터랙티브"] },
+      { dir:"frameworks/aos", name:"AOS (스크롤)", desc:"스크롤하면 요소가 부드럽게 등장. Animate On Scroll.", chips:["애니메이션","스크롤"] },
+    ];
+    const card = (s, iframe) => `
+      <a class="style" href="${s.dir}/showcase.html">
+        <div class="preview">${s.no?`<span class="no">${s.no}</span>`:""}<span class="veil"></span>
+          <iframe src="${iframe}" loading="lazy" scrolling="no" tabindex="-1"></iframe></div>
+        <div class="body">
+          <h2>${s.name}</h2>
+          <p>${s.desc}</p>
+          <div class="chips">${s.chips.map(c=>`<span class="chip">${c}</span>`).join("")}</div>
+        </div>
+      </a>`;
+    document.getElementById("styles").innerHTML =
+      STYLES.map(s => card({...s, dir:`styles/${s.dir}`}, `styles/${s.dir}/showcase.html`)).join("");
+    document.getElementById("frameworks").innerHTML =
+      FRAMEWORKS.map(s => card(s, `${s.dir}/showcase.html`)).join("");
+    document.getElementById("anim").innerHTML =
+      ANIM.map(s => card(s, `${s.dir}/showcase.html`)).join("");
+
+    // 카드 등장 애니메이션 (스크롤 진입 시 페이드업, 모션 최소화 설정 존중)
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const io = new IntersectionObserver((es) => {
+        es.forEach((e, i) => { if (e.isIntersecting) { e.target.style.transitionDelay = (i % 3 * 60) + "ms"; e.target.classList.add("in"); io.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      document.querySelectorAll(".style").forEach(el => { el.classList.add("reveal"); io.observe(el); });
+    }
+  </script>
+</body>
+</html>

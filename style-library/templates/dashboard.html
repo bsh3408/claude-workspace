@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>대시보드 템플릿</title>
+  <link rel="stylesheet" href="../css/library.css">
+</head>
+<body>
+  <div class="app-shell">
+
+    <!-- 사이드바 -->
+    <aside class="sidebar">
+      <div class="brand">📊 MyApp</div>
+      <a href="#" class="active"><span class="ico">🏠</span> 대시보드</a>
+      <a href="#"><span class="ico">👥</span> 사용자</a>
+      <a href="#"><span class="ico">📦</span> 콘텐츠</a>
+      <a href="#"><span class="ico">📈</span> 통계</a>
+      <p class="nav-group">설정</p>
+      <a href="#"><span class="ico">⚙️</span> 환경설정</a>
+      <a href="#"><span class="ico">❓</span> 도움말</a>
+    </aside>
+
+    <!-- 메인 -->
+    <div class="app-main">
+      <header class="topbar">
+        <strong>대시보드</strong>
+        <nav>
+          <a href="#" class="active">개요</a>
+          <a href="#">리포트</a>
+        </nav>
+        <button class="btn btn-secondary btn-sm" id="theme-btn" style="margin-left:auto;">🌙</button>
+        <button class="btn btn-sm">+ 새로 만들기</button>
+      </header>
+
+      <main style="padding: var(--sp-6); display:flex; flex-direction:column; gap:var(--sp-6);">
+
+        <!-- 통계 위젯 -->
+        <section class="grid grid-4">
+          <div class="card stat-card">
+            <span class="stat-label">전체 방문자</span>
+            <span class="stat-value">12,480</span>
+            <span class="stat-delta up">▲ 8.2% 지난주 대비</span>
+          </div>
+          <div class="card stat-card">
+            <span class="stat-label">활성 사용자</span>
+            <span class="stat-value">3,204</span>
+            <span class="stat-delta up">▲ 3.1%</span>
+          </div>
+          <div class="card stat-card">
+            <span class="stat-label">신규 가입</span>
+            <span class="stat-value">186</span>
+            <span class="stat-delta down">▼ 1.4%</span>
+          </div>
+          <div class="card stat-card">
+            <span class="stat-label">완료율</span>
+            <span class="stat-value">74%</span>
+            <div class="progress mt-2"><span style="width:74%"></span></div>
+          </div>
+        </section>
+
+        <!-- 표 + 사이드 카드 -->
+        <section class="grid" style="grid-template-columns: 2fr 1fr;">
+          <div class="card card-pad-0">
+            <div class="row-between p-4" style="border-bottom:1px solid var(--border);">
+              <h3>최근 활동</h3>
+              <a href="#" style="font-size:var(--fs-sm);">전체 보기</a>
+            </div>
+            <table class="table">
+              <thead><tr><th>이름</th><th>상태</th><th>날짜</th><th>진행</th></tr></thead>
+              <tbody>
+                <tr><td>프로젝트 A</td><td><span class="badge badge-success">완료</span></td><td>08-07</td><td>100%</td></tr>
+                <tr><td>프로젝트 B</td><td><span class="badge badge-warning">진행중</span></td><td>08-06</td><td>62%</td></tr>
+                <tr><td>프로젝트 C</td><td><span class="badge">대기</span></td><td>08-05</td><td>0%</td></tr>
+                <tr><td>프로젝트 D</td><td><span class="badge badge-danger">지연</span></td><td>08-02</td><td>28%</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="stack">
+            <div class="card">
+              <h4>알림</h4>
+              <div class="stack-sm mt-4">
+                <div class="alert alert-info">📢 새 버전이 배포되었습니다.</div>
+                <div class="alert alert-warning">⚠️ 저장 공간이 80% 찼습니다.</div>
+              </div>
+            </div>
+            <div class="card">
+              <h4>빠른 작업</h4>
+              <div class="stack-sm mt-4">
+                <button class="btn btn-block">보고서 생성</button>
+                <button class="btn btn-secondary btn-block">데이터 내보내기</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('theme-btn').addEventListener('click', (e) => {
+      const html = document.documentElement;
+      const dark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', dark ? 'light' : 'dark');
+      e.target.textContent = dark ? '🌙' : '☀️';
+    });
+  </script>
+</body>
+</html>

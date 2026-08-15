@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NES.css · showcase</title>
+  <link rel="stylesheet" href="nes.min.css">
+  <style>
+    /* NES.css는 픽셀 폰트(Press Start 2P)와 함께 쓰면 완성됩니다.
+       오프라인 환경이라 시스템 고정폭 글꼴로 대체 — 픽셀 테두리/버튼/아이콘은 그대로 나옵니다. */
+    body{font-family:"DungGeunMo","NeoDunggeunmo",ui-monospace,"Courier New",monospace;
+      background:#f7f7f0;padding:24px;max-width:840px;margin:auto;line-height:1.7}
+    .nes-container{background:#fff;margin-bottom:24px}
+    .row{display:flex;gap:16px;flex-wrap:wrap}
+    .row>*{flex:1;min-width:180px}
+    h1{font-size:1.4rem}
+  </style>
+</head>
+<body>
+  <div class="nes-container is-dark with-title">
+    <p class="title">RETRO QUEST</p>
+    <p>8비트 감성의 게임 UI. <i class="nes-icon is-small heart"></i><i class="nes-icon is-small heart"></i><i class="nes-icon is-small heart"></i></p>
+  </div>
+
+  <div class="row">
+    <button type="button" class="nes-btn is-primary">시작</button>
+    <button type="button" class="nes-btn is-success">이어하기</button>
+    <button type="button" class="nes-btn is-warning">설정</button>
+    <a href="../../index.html" class="nes-btn">← 카탈로그</a>
+  </div>
+
+  <div class="nes-container with-title" style="margin-top:24px">
+    <p class="title">플레이어</p>
+    <div class="row" style="align-items:center">
+      <i class="nes-mario"></i>
+      <div style="flex:3">
+        <p>레벨 <span class="nes-text is-primary">7</span> · 골드 <span class="nes-text is-warning">240</span></p>
+        <label>HP</label>
+        <progress class="nes-progress is-success" value="80" max="100"></progress>
+        <label>EXP</label>
+        <progress class="nes-progress is-primary" value="45" max="100"></progress>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="nes-container with-title">
+      <p class="title">대화</p>
+      <div class="nes-balloon from-left">
+        <p>모험을 떠날 준비가 되었나?</p>
+      </div>
+      <button type="button" class="nes-btn is-primary">예</button>
+      <button type="button" class="nes-btn is-error">아니오</button>
+    </div>
+
+    <div class="nes-container with-title">
+      <p class="title">이름 입력</p>
+      <div class="nes-field">
+        <label for="n">용사 이름</label>
+        <input type="text" id="n" class="nes-input" placeholder="ABC">
+      </div>
+      <label class="mt-2">직업</label>
+      <div class="nes-select">
+        <select><option>전사</option><option>마법사</option><option>궁수</option></select>
+      </div>
+    </div>
+  </div>
+
+  <div class="nes-container is-rounded" style="margin-top:24px;text-align:center">
+    <i class="nes-icon trophy is-large"></i>
+    <i class="nes-icon star is-large"></i>
+    <i class="nes-icon coin is-large"></i>
+    <p style="margin-top:12px">NES.css · 실제 라이브러리 — style-library / frameworks</p>
+  </div>
+</body>
+</html>

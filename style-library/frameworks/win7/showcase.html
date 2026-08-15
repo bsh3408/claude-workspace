@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7.css · showcase</title>
+  <link rel="stylesheet" href="7.css">
+  <style>
+    body{margin:0;min-height:100vh;font-family:"Pretendard","Malgun Gothic",sans-serif;
+      background:radial-gradient(120% 100% at 50% 0,#1a3d6e,#0a1f3d 70%),#0a1f3d}
+    .desktop{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start;padding:32px}
+    .window{width:360px}
+    .taskbar{position:fixed;left:0;right:0;bottom:0;height:40px;display:flex;align-items:center;gap:10px;padding:0 8px;
+      background:linear-gradient(180deg,rgba(120,170,235,.55),rgba(20,50,110,.75));
+      backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.4)}
+    .orb{width:34px;height:34px;border-radius:50%;
+      background:radial-gradient(circle at 40% 30%,#cfe6ff,#2a6fd6 60%,#0a3a86);
+      border:1px solid rgba(255,255,255,.6);box-shadow:0 0 8px rgba(120,180,255,.8)}
+    .clock{margin-left:auto;color:#fff;text-align:center;font-size:.8rem;padding:2px 12px;text-shadow:0 1px 2px rgba(0,0,0,.6)}
+  </style>
+</head>
+<body>
+  <div class="desktop">
+    <div class="window glass active">
+      <div class="title-bar">
+        <div class="title-bar-text">참가 신청</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-body has-space">
+        <div class="field-row-stacked"><label for="nm">이름</label><input id="nm" type="text" placeholder="홍길동"></div>
+        <div class="field-row-stacked"><label for="sel">분야</label>
+          <select id="sel"><option>국어</option><option>수학</option><option>과학</option></select></div>
+        <div class="field-row"><input id="ag" type="checkbox"><label for="ag">약관에 동의합니다</label></div>
+        <section class="field-row" style="justify-content:flex-end;gap:6px;margin-top:12px">
+          <button>취소</button><button class="default">확인</button>
+        </section>
+      </div>
+    </div>
+
+    <div class="window glass active">
+      <div class="title-bar">
+        <div class="title-bar-text">도움말</div>
+        <div class="title-bar-controls"><button aria-label="Close"></button></div>
+      </div>
+      <div class="window-body has-space">
+        <p>7.css는 Windows 7의 <b>Aero 글래스</b> UI를 재현합니다. 반투명 유리, 둥근 창, 빛나는 시작 오브가 특징이에요.</p>
+        <div class="field-row"><label>진행</label><progress max="100" value="72"></progress></div>
+        <fieldset>
+          <legend>보기</legend>
+          <div class="field-row"><input id="r1" type="radio" name="t" checked><label for="r1">아이콘</label></div>
+          <div class="field-row"><input id="r2" type="radio" name="t"><label for="r2">자세히</label></div>
+        </fieldset>
+        <div class="field-row" style="justify-content:flex-end;margin-top:10px">
+          <a href="../../index.html"><button>← 카탈로그</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="taskbar">
+    <span class="orb"></span>
+    <span class="clock">9:41<br>2026-08-08</span>
+  </div>
+</body>
+</html>

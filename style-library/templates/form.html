@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>폼 / 입력 템플릿</title>
+  <link rel="stylesheet" href="../css/library.css">
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">📝 Form</span>
+    <button class="btn btn-secondary btn-sm" id="theme-btn" style="margin-left:auto;">🌙</button>
+    <button class="btn btn-secondary btn-sm" id="modal-open">모달 예시</button>
+  </header>
+
+  <main class="container-sm" style="padding-block: var(--sp-7); margin-inline:auto;">
+
+    <!-- 로그인 카드 -->
+    <div class="card container-xs" style="margin-inline:auto;">
+      <div class="text-center mb-6">
+        <h2>로그인</h2>
+        <p class="text-soft">계정으로 계속 진행하세요.</p>
+      </div>
+      <form class="stack" onsubmit="return false;">
+        <div class="field">
+          <label class="label" for="email">이메일</label>
+          <input class="input" id="email" type="email" placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="field">
+          <label class="label" for="pw">비밀번호</label>
+          <input class="input" id="pw" type="password" placeholder="••••••••" autocomplete="current-password">
+          <span class="hint">8자 이상 입력하세요.</span>
+        </div>
+        <div class="row-between">
+          <label class="check"><input type="checkbox"> 로그인 유지</label>
+          <a href="#" style="font-size:var(--fs-sm);">비밀번호 찾기</a>
+        </div>
+        <button class="btn btn-block btn-lg">로그인</button>
+        <button class="btn btn-secondary btn-block">Google로 계속하기</button>
+      </form>
+    </div>
+
+    <!-- 설문 / 신청 폼 -->
+    <div class="card mt-6">
+      <h3>참가 신청서</h3>
+      <p class="text-soft mb-6">다양한 입력 요소 예시입니다.</p>
+      <form class="stack" onsubmit="return false;">
+        <div class="grid grid-2">
+          <div class="field">
+            <label class="label">이름</label>
+            <input class="input" placeholder="홍길동">
+          </div>
+          <div class="field">
+            <label class="label">연락처</label>
+            <input class="input" placeholder="010-0000-0000">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">참가 분야</label>
+          <select class="select">
+            <option>선택하세요</option>
+            <option>디자인</option>
+            <option>개발</option>
+            <option>기획</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="label">경험 수준</label>
+          <div class="cluster">
+            <label class="check"><input type="radio" name="lv"> 입문</label>
+            <label class="check"><input type="radio" name="lv"> 중급</label>
+            <label class="check"><input type="radio" name="lv"> 숙련</label>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">하고 싶은 말</label>
+          <textarea class="textarea" placeholder="자유롭게 적어주세요."></textarea>
+        </div>
+        <label class="check"><input type="checkbox"> 개인정보 수집·이용에 동의합니다.</label>
+        <div class="cluster" style="justify-content:flex-end;">
+          <button class="btn btn-ghost">취소</button>
+          <button class="btn">제출하기</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- 모달 -->
+  <div class="modal-backdrop" id="modal">
+    <div class="modal">
+      <h3>정말 제출할까요?</h3>
+      <p class="text-soft mt-2">제출 후에는 내용을 수정할 수 없습니다.</p>
+      <div class="cluster mt-6" style="justify-content:flex-end;">
+        <button class="btn btn-ghost" id="modal-close">취소</button>
+        <button class="btn" id="modal-close2">확인</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('theme-btn').addEventListener('click', (e) => {
+      const html = document.documentElement;
+      const dark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', dark ? 'light' : 'dark');
+      e.target.textContent = dark ? '🌙' : '☀️';
+    });
+    const modal = document.getElementById('modal');
+    document.getElementById('modal-open').onclick = () => modal.classList.add('open');
+    const close = () => modal.classList.remove('open');
+    document.getElementById('modal-close').onclick = close;
+    document.getElementById('modal-close2').onclick = close;
+    modal.addEventListener('click', e => { if (e.target === modal) close(); });
+  </script>
+</body>
+</html>

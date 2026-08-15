@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UIkit · showcase</title>
+  <link rel="stylesheet" href="uikit.min.css">
+  <style>body{font-family:"Pretendard","Malgun Gothic",sans-serif}</style>
+</head>
+<body>
+  <nav class="uk-navbar-container" style="padding:0 20px">
+    <div class="uk-navbar">
+      <div class="uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="#">🔷 UIkit</a>
+        <ul class="uk-navbar-nav">
+          <li class="uk-active"><a href="#">홈</a></li>
+          <li><a href="#">기능</a></li>
+        </ul>
+      </div>
+      <div class="uk-navbar-right">
+        <a href="../../index.html" class="uk-button uk-button-default uk-button-small">← 카탈로그</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="uk-section uk-section-primary uk-section-small uk-text-center">
+    <div class="uk-container">
+      <span class="uk-label">모던 · 반응형</span>
+      <h1 class="uk-heading-small" style="color:#fff">세련된 컴포넌트 프레임워크</h1>
+      <p>깔끔한 기본값과 풍부한 컴포넌트. 실무에서 많이 쓰이는 UI 키트.</p>
+      <button class="uk-button uk-button-default">시작하기</button>
+    </div>
+  </div>
+
+  <div class="uk-container uk-margin">
+    <div class="uk-grid uk-child-width-1-3@m uk-grid-match" uk-grid>
+      <div><div class="uk-card uk-card-default uk-card-body">
+        <span class="uk-label uk-label-success">교육</span>
+        <h3 class="uk-card-title uk-margin-small-top">📚 강의실</h3>
+        <p>실시간 수업과 자료 공유.</p>
+        <button class="uk-button uk-button-primary uk-button-small">입장</button>
+      </div></div>
+      <div><div class="uk-card uk-card-default uk-card-body">
+        <h3 class="uk-card-title">📝 과제함</h3>
+        <p>제출 현황을 한눈에.</p>
+        <button class="uk-button uk-button-secondary uk-button-small">확인</button>
+      </div></div>
+      <div><div class="uk-card uk-card-default uk-card-body">
+        <h3 class="uk-card-title">📈 성적표</h3>
+        <p>자동 집계 리포트.</p>
+        <button class="uk-button uk-button-default uk-button-small">보기</button>
+      </div></div>
+    </div>
+
+    <div class="uk-grid uk-child-width-1-2@m uk-margin" uk-grid>
+      <div>
+        <div class="uk-card uk-card-default uk-card-body">
+          <h3 class="uk-card-title">참가 신청</h3>
+          <form>
+            <div class="uk-margin"><input class="uk-input" type="text" placeholder="이름"></div>
+            <div class="uk-margin"><select class="uk-select"><option>국어</option><option>수학</option></select></div>
+            <label><input class="uk-checkbox" type="checkbox"> 약관에 동의합니다</label>
+            <div class="uk-margin"><button class="uk-button uk-button-primary">제출</button></div>
+          </form>
+        </div>
+      </div>
+      <div>
+        <div class="uk-alert-success" uk-alert><p>✅ 저장되었습니다.</p></div>
+        <div class="uk-alert-warning" uk-alert><p>⚠️ 마감이 임박했어요.</p></div>
+        <div class="uk-card uk-card-default uk-card-body">
+          <p>진행률</p>
+          <progress class="uk-progress" value="70" max="100"></progress>
+          <progress class="uk-progress" value="40" max="100"></progress>
+          <span class="uk-badge">3</span> <span class="uk-label">교육</span> <span class="uk-label uk-label-warning">마감</span>
+        </div>
+      </div>
+    </div>
+    <p class="uk-text-center uk-text-muted uk-margin"><small>UIkit · 실제 라이브러리 — style-library / frameworks</small></p>
+  </div>
+</body>
+</html>

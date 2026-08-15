@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bulma · showcase</title>
+  <link rel="stylesheet" href="bulma.min.css">
+</head>
+<body>
+  <nav class="navbar is-primary" role="navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold is-size-5" href="#">🟢 Bulma</a>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="#">홈</a>
+          <a class="navbar-item" href="#">기능</a>
+          <a class="navbar-item" href="#">가격</a>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item"><a href="../../index.html" class="button is-light is-small">← 카탈로그</a></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero is-primary is-medium">
+    <div class="hero-body has-text-centered">
+      <p class="subtitle is-6">Flexbox 기반 · 순수 CSS</p>
+      <p class="title is-1">깔끔하고 모던한 UI</p>
+      <p class="subtitle is-4">Bulma의 실제 컴포넌트로 구성했습니다.</p>
+      <div class="buttons is-centered">
+        <button class="button is-white is-medium">시작하기</button>
+        <button class="button is-outlined is-inverted is-medium">데모</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <div class="box">
+            <span class="tag is-primary is-light mb-2">교육</span>
+            <p class="title is-5">강의실</p>
+            <p class="subtitle is-6 has-text-grey">실시간 수업과 자료 공유.</p>
+            <button class="button is-primary is-fullwidth">입장</button>
+          </div>
+        </div>
+        <div class="column">
+          <div class="box">
+            <span class="tag is-link is-light mb-2">과제</span>
+            <p class="title is-5">과제함</p>
+            <p class="subtitle is-6 has-text-grey">제출 현황을 한눈에.</p>
+            <button class="button is-link is-fullwidth">확인</button>
+          </div>
+        </div>
+        <div class="column">
+          <div class="box">
+            <span class="tag is-success is-light mb-2">성적</span>
+            <p class="title is-5">성적표</p>
+            <p class="subtitle is-6 has-text-grey">자동 집계 리포트.</p>
+            <button class="button is-success is-fullwidth">보기</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column is-7">
+          <div class="notification is-success is-light">✅ 저장되었습니다.</div>
+          <div class="field"><label class="label">이름</label>
+            <div class="control"><input class="input" placeholder="홍길동"></div></div>
+          <div class="field"><label class="label">분야</label>
+            <div class="control"><div class="select is-fullwidth"><select><option>국어</option><option>수학</option></select></div></div></div>
+          <div class="field"><label class="checkbox"><input type="checkbox"> 약관에 동의합니다</label></div>
+          <button class="button is-primary">제출</button>
+        </div>
+        <div class="column is-5">
+          <article class="message is-primary">
+            <div class="message-header"><p>안내</p></div>
+            <div class="message-body">Bulma는 JS 없이 CSS만으로 동작하는 프레임워크입니다. 클래스 조합만으로 레이아웃이 완성돼요.</div>
+          </article>
+          <progress class="progress is-primary" value="70" max="100">70%</progress>
+          <progress class="progress is-link" value="45" max="100">45%</progress>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered has-text-grey">Bulma · 실제 라이브러리 — style-library / frameworks</div>
+  </footer>
+</body>
+</html>
